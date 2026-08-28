@@ -1,13 +1,71 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>nutrivida-frontend</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clínica NutriVida - Inicio</title>
+    <link rel="stylesheet" href="css/estilo.css">
+   
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+</head>
+<body>
+
+    <header>
+        <h1>Clínica NutriVida</h1>
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="citas.html">Agendar Cita</a>
+            <a href="ficha.html">Mi Ficha</a>
+            <a href="admin.html">Administración</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="card-box">
+            <h2>Bienvenido a Clínica NutriVida</h2>
+            <p>Atención nutricional especializada e integral en Temuco.</p>
+        </section>
+
+        <!-- Catalogo basico de precios -->
+        <section class="card-box">
+            <h3>Catálogo de Servicios y Tarifa</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Servicio</th>
+                        <th>Descripción</th>
+                        <th>Precio</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Consulta Nutricional Inicial</td>
+                        <td>Evaluación completa + antropometría</td>
+                        <td>$35.000</td>
+                    </tr>
+                    <tr>
+                        <td>Control Nutricional</td>
+                        <td>Seguimiento de pauta y avances</td>
+                        <td>$25.000</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        
+        <section class="card-box">
+            <h3>Ubicación en Temuco</h3>
+            <div id="mapa-temuco" style="height: 300px; margin-top: 10px;"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Clínica NutriVida - Temuco, Región de La Araucanía</p>
+    </footer>
+
+    
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="js/mapa.js"></script>
+    <script src="js/main.js"></script>
+</body>
 </html>

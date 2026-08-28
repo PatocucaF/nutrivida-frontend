@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clínica NutriVida - Administración</title>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+
+    <header>
+        <h1>Clínica NutriVida</h1>
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="citas.html">Agendar Cita</a>
+            <a href="ficha.html">Mi Ficha</a>
+            <a href="admin.html">Administración</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Estructura base para gestion de usuarios -->
+        <section class="card-box">
+            <h2>Panel de Gestión de Usuarios y Roles</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Usuario</th>
+                        <th>Correo</th>
+                        <th>Rol Actual</th>
+                        <th>Acción</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Camila Morales</td>
+                        <td>cmorales@nutrivida.cl</td>
+                        <td>Nutricionista</td>
+                        <td><button>Editar Rol</button></td>
+                    </tr>
+                    <tr>
+                        <td>Juan Pérez</td>
+                        <td>jperez@gmail.com</td>
+                        <td>Paciente</td>
+                        <td><button>Editar Rol</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Clínica NutriVida - Temuco, Región de La Araucanía</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
