@@ -24,3 +24,11 @@ Para ejecutar y explorar el proyecto en un entorno local:
 1. Clonar este repositorio mediante el terminal:
    ```bash
    git clone <URL_DEL_REPOSITORIO>
+
+
+
+## Estado del Proyecto
+- Design & UI: Completado (Paleta clínica, responsive y microinteracciones).
+- Documentación: ERS actualizada en `docs/ERS.md`.
+
+
