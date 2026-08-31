@@ -1,105 +1,215 @@
-/* Estilos globales*/
+/*Variable de paleta de colores*/
+:root {
+   --primary: #2e7d32;
+   --primary-hover: #1b5e20;
+   --secondary: #0288d1;
+   --bg-body: #f4f6f8;
+    --card-bg: #ffffff;
+    --text-main: #333333;
+    --text-muted: #666666;
+    --border: #e0e0e0;
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --radius: 10px;
+
+}   
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe IUI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
-    background-color: #f8f9fa;
-    color: #333;
+    background-color: var(--bg-body);
+    color: var(--text-main);
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    line-height: 1.6;
 }
 
 header {
-    background-color: #2e7d32;
+    background: linear-gradient(135deg, var(--primary), var(--primary-hover));
     color: white;
-    padding: 1rem 2rem;
+    padding: 1.2rem 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}  
+header h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+nav {
+    display: flex;
+    gap: 15px;
 }
 
 nav a {
-    color: white;
+    color: rgba(255, 255, 255, 0.9);
     text-decoration: none;
-    margin-left: 1.5rem;
     font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    transition: all 0.3s ease;
 }
 
 nav a:hover {
-    text-decoration: underline;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #ffffff;
 }
+
 
 main {
     flex: 1;
-    padding: 2rem;
-    max-width: 1000px;
-    margin: 0 auto;
+    max-width: 1100px;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
 }
 
-footer {
-    background-color: #1b5e20;
-    color: white;
-    text-align: center;
-    padding: 1rem;
-    margin-top: auto;
-}
-
-/* Tablas y formularios simples */
 .card-box {
-    background: white;
-    padding: 1.5rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    margin-bottom: 1.5rem;
+    background: var(--card-bg);
+    padding: 1.8rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    border: 1px solid rgba(0,0,0,0.03);
 }
+
+.card-box h2, .card-box h3 {
+    color: var(--primary);
+    margin-bottom: 0.8rem;
+    border-bottom: 2px solid #eef2f5;
+    padding-bottom: 0.4rem;
+}
+
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-muted);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="date"],
+input[type="number"],
+select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input:focus, select:focus {
+    border-color: var(--secondary);
+    box-shadow: 0 0 0 3px rgba(2, 136, 209, 0.15);
+}
+
+button {
+    background-color: var(--primary);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+button:hover {
+    background-color: var(--primary-hover);
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
 
 table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 1rem;
+    overflow: hidden;
 }
 
 th, td {
-    padding: 10px;
-    border: 1px solid #ddd;
+    padding: 1rem;
     text-align: left;
+    border-bottom: 1px solid var(--border);
 }
 
 th {
-    background-color: #e8f5e9;
+    background-color: #f8f9fa;
+    color: var(--text-muted);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 0.5px;
 }
 
-.form-group {
-    margin-bottom: 1rem;
+tr:hover {
+    background-color: #f1f5f9;
 }
 
-.form-group label {
-    display: block;
-    margin-bottom: 0.5rem;
+.badge {
+    background-color: #e3f2fd;
+    color: var(--secondary);
+    padding: 0.3rem 0.7rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    display: inline-block;
 }
 
-.form-group input, .form-group select {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
 
-button {
-    background-color: #2e7d32;
+footer {
+    background-color: var(--primary-hover);
     color: white;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 4px;
-    cursor: pointer;
+    text-align: center;
+    padding: 1.2rem;
+    margin-top: auto;
+    font-size: 0.9rem;
 }
 
-button:hover {
-    background-color: #1b5e20;
-}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    main {
+        padding: 0 1rem;
+    }
+
+    table, th, td {
+        font-size: 0.9rem;
+        padding: 0.6rem;
+    }
+} 
