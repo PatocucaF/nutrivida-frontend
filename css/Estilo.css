@@ -272,3 +272,10 @@ tr {
     transition: background-color 0.15s ease;
 }
 
+/* Accesibilidad y foco visual */
+nav a:focus,
+button:focus {
+    outline: 2px solid #ffffff;
+    outline-offset: 2px;
+}
+
