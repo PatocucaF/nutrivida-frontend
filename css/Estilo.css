@@ -143,6 +143,16 @@ button:active {
 }
 
 /* Botones de accion dinamicos en tablas */
+
+.input-aditar-rol {
+    width: 130px;
+    padding: 0.35rem 0.5rem;
+    border:  1px solid var(--secondary);
+    border-radius:4px;
+    font-size: 0.85rem;
+    outline: none;
+}
+
 .btn-cambiar-rol {
     background-color: var(--secondary);
     padding: 0.4rem 0.8rem;
