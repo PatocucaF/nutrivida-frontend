@@ -142,6 +142,27 @@ button:active {
     transform: scale(0.98);
 }
 
+/* Botones de accion dinamicos en tablas */
+.btn-cambiar-rol {
+    background-color: var(--secondary);
+    padding: 0.4rem 0.8rem;
+    font-size: 0.85rem;
+}
+
+.btn-cambiar-rol:hover {
+    background-color: #0277bd;
+}
+
+.btn-guardar-rol {
+    background-color: #28a745;
+    padding: 0.4rem 0.8rem;
+    font-size: 0.85rem;
+}
+
+.btn-guardar-rol:hover {
+    background-color: #218838;
+}
+
 table {
     width: 100%;
     border-collapse: collapse;
