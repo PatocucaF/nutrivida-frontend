@@ -1,5 +1,36 @@
 // Lógica para la gestión de usuarios y roles en la vista Admin
 
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Validar sesión del Administrador
+    const loginModal = document.getElementById('login-modal');
+    const adminContent = document.getElementById('admin-content');
+    const loginForm = document.getElementById('login-form');
+    const loginError = document.getElementById('login-error');
+
+    
+    if (sessionStorage.getItem('adminAuth') === 'true') {
+        if (loginModal) loginModal.style.display = 'none';
+        if (adminContent) adminContent.style.display = 'block';
+    }
+
+    if (loginForm) {
+        loginForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const user = document.getElementById('username').value;
+            const pass = document.getElementById('password').value;
+
+            // Credenciales válidas
+            if (user === 'admin' && pass === 'nutrivida2026') {
+                sessionStorage.setItem('adminAuth', 'true');
+                loginModal.style.display = 'none';
+                adminContent.style.display = 'block';
+            } else {
+                loginError.style.display = 'block';
+            }
+        });
+    }
+});
 document.addEventListener('DOMContentLoaded', () => {
     const formAdmin = document.getElementById('form-admin');
     const tablaUsuarios = document.querySelector('#tabla-usuarios tbody');
