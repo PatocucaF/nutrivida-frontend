@@ -4,20 +4,19 @@
    --primary-hover: #1b5e20;
    --secondary: #0288d1;
    --bg-body: #f4f6f8;
-    --card-bg: #ffffff;
-    --text-main: #333333;
-    --text-muted: #666666;
-    --border: #e0e0e0;
-    --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    --radius: 10px;
-
+   --card-bg: #ffffff;
+   --text-main: #333333;
+   --text-muted: #666666;
+   --border: #e0e0e0;
+   --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+   --radius: 10px;
 }   
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe IUI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
@@ -36,11 +35,12 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     position: sticky;
     top: 0;
     z-index: 1000;
-}  
+}   
+
 header h1 {
     font-size: 1.5rem;
     font-weight: 700;
@@ -64,7 +64,6 @@ nav a:hover {
     background-color: rgba(255, 255, 255, 0.2);
     color: #ffffff;
 }
-
 
 main {
     flex: 1;
@@ -91,7 +90,6 @@ main {
     border-bottom: 2px solid #eef2f5;
     padding-bottom: 0.4rem;
 }
-
 
 .form-group {
     display: flex;
@@ -144,7 +142,6 @@ button:active {
     transform: scale(0.98);
 }
 
-
 table {
     width: 100%;
     border-collapse: collapse;
@@ -181,6 +178,22 @@ tr:hover {
     display: inline-block;
 }
 
+/* Estados visuales para Ficha Clinica */
+.status-normal {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+.status-warning {
+    background-color: #fff3e0;
+    color: #ef6c00;
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    font-weight: 600;
+}
 
 footer {
     background-color: var(--primary-hover);
@@ -190,7 +203,6 @@ footer {
     margin-top: auto;
     font-size: 0.9rem;
 }
-
 
 @media (max-width: 768px) {
     header {
@@ -212,4 +224,4 @@ footer {
         font-size: 0.9rem;
         padding: 0.6rem;
     }
-} 
+}
