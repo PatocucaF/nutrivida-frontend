@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clínica NutriVida - Ficha Clínica</title>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="header-top">
+            <h1>Clínica NutriVida</h1>
+            <div class="header-contact">
+                <span> Telefono: +56 45 265 8967</span>
+                <span> WhatsApp: +56 9 3457 7166</span>
+            </div>
+        </div>   
+        
+        <nav class="header-nav">
+            <button id="menu-btn" class="menu-btn" ariass-label="Abrir-menu">
+                <span id="icon-hamburger">☰</span>
+                <span id="icon-close" class="hidden">✕</span>
+            </button>
+
+            <div id="mobile-menu" class="nav-content hidden">
+                <div class="nav-links">
+                    <a href="index.html" class="mobile-link">Inicio</a>
+                    <a href="citas.html" class="mobile-link">Agendar Cita</a>
+                    <a href="ficha.html" class="mobile-link">Mi Ficha</a>
+                    <a href="admin.html" class="mobile-link">Administración</a>
+                </div>
+                <div  class="nav-aauth">
+                    <a href="#" id="btn-open-login" class="mobile-link">Iniciar Sesión</a>
+                    <a href="#" id="btn-open-register" class="btn-highlight  mobile-link">Registrarse</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        
+        <!-- Info del paciente -->
+        <section class="card-box">
+            <h2>Ficha Clínica del Paciente</h2>
+            <p style="margin-top: 0.5rem;"><strong>Paciente:</strong> Juan Pérez | <strong>RUT:</strong> 18.123.456-7 | <strong>Edad:</strong> 28 años</p>
+        </section>
+
+        <!-- Formulario para agregar nuevas mediciones -->
+        <section class="card-box">
+            <h3>Registrar Nueva Evaluación Antropométrica</h3>
+            <form id="form-ficha" style="margin-top: 1rem;">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+
+                    <div class="form-group">
+                        <label for="fecha-medicion">Fecha:</label>
+                        <input type="date" id="fecha-medicion" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="peso">Peso (kg):</label>
+                        <input type="number" step="0.1" id="peso" placeholder="Ej: 75.5" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="talla">Talla / Estatura (m):</label>
+                        <input type="number" step="0.01" id="talla" placeholder="Ej: 1.75" required>
+                    </div>                    
+
+                    <div class="form-group">
+                        <label for="grasa">% Grasa Corporal:</label>
+                        <input type="number" step="0.1" id="grasa" placeholder="Ej: 22.0" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="imc-calculado">IMC Calculado:</label>
+                    <input type="text" id="imc-calculado" placeholder="Se calcula automáticamente" readonly style="background-color: #e9ecef;">
+                </div>
+
+                <button type="submit" style="margin-top: 0.5rem;">Guardar Evaluación</button>
+            </form>
+        </section>
+
+        <!--Tabla con el Historial-->
+        <section class="card-box">
+            <h3>Historial de Mediciones</h3>
+            <table id="tabla-ficha">
+                
+                <thead>
+                    <tr>
+                        <th>Fecha</th>
+                        <th>Peso (kg)</th>
+                        <th>Talla (m)</th>
+                        <th>IMC</th>
+                        <th>% Grasa</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>10/01/2026</td>
+                        <td>82.5</td>
+                        <td>1.75</td>
+                        <td>26.9</td>
+                        <td>24.5%</td>
+                    </tr>
+
+                    <tr>
+                        <td>15/02/2026</td>
+                        <td>80.1</td>
+                        <td>1.75</td>
+                        <td>26.1</td>
+                        <td>23.0%</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Clínica NutriVida - Temuco, Región de La Araucanía</p>
+    </footer>
+
+    <!-- Script de lógica de la ficha -->
+    <script src="js/ficha.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clínica NutriVida - Administración</title>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+
+    <header>
+        <div class="header-top">
+            <h1>Clínica NutriVida</h1>
+            <div class="header-contact">
+                <span> Telefono: +56 45 265 8967</span>
+                <span> WhatsApp: +56 9 3457 7166</span>
+            </div>
+        </div>   
+        
+        <nav class="header-nav">
+            <button id="menu-btn" class="menu-btn" aria-label="Abrir-menu">
+                <span id="icon-hamburger">☰</span>
+                <span id="icon-close" class="hidden">✕</span>
+            </button>
+
+            <div id="mobile-menu" class="nav-content hidden">
+                <div class="nav-links">
+                    <a href="index.html" class="mobile-link">Inicio</a>
+                    <a href="citas.html" class="mobile-link">Agendar Cita</a>
+                    <a href="ficha.html" class="mobile-link">Mi Ficha</a>
+                    <a href="admin.html" class="mobile-link">Administración</a>
+                </div>
+                <div  class="nav-aauth">
+                    <a href="#" id="btn-open-login" class="mobile-link">Iniciar Sesión</a>
+                    <a href="#" id="btn-open-register" class="btn-highlight  mobile-link">Registrarse</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Estructura base para gestion de usuarios -->
+        <section class="card-box">
+            <h2>Panel de Gestión de Usuarios y Roles</h2>
+            <p style="margin-top: 0.5rem;">Administración de accesos y permisos del personal médico y pacientes.</p>
+        </section>
+
+        <section class="card-box">
+            <h3>Registrar nuevo usuario</h3>
+            <form id="form-admin" style ="margin-top: 1rem">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));gap: 1rem;">
+                    <div class="form-group">
+                        <label for="admin-nombre">Nombre Completo:</label>
+                        <input type="text" id="admin-nombre" placeholder="Ej: Roberto Gómez" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="admin-email">Correo Electrónico:</label>
+                        <input type="email" id="admin-email" placeholder="Ej: roberto.gomez@gmail.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="admin-rol">Rol asignado:</label>
+                        <select id="admin-rol" required>
+                            <option value="">Seleccione un rol</option>
+                            <option value="nutricionista">Nutricionista</option>
+                            <option value="Administrador">Administrador</option>
+                            <option value="Paciente">Paciente</option>
+                        </select>
+                    </div>
+                </div>
+                <button type="submit" style="margin-top: 1rem;">Agregar Usuario</button>
+            </form>
+        </section>
+
+        <section class="card-box">
+            <h3>Usuarios Registrados</h3>
+            <table id="tabla-usuarios">
+                <thead>
+                    <tr>
+                        <th>Usuario</th>
+                        <th>Correo</th>
+                        <th>Rol actual</th>
+                        <th>Estado</th>
+                        <th>Acción</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Camila Morales</td>
+                        <td>cmorales@nutrivida.cl</td>
+                        <td><span class="bagde">Nutricionista</span></td>
+                        <td>Activo</td>
+                        <td><button class="btn_cambiar-rol">Cambiar Rol</button></td>
+                    </tr>
+                    <tr>
+                        <td>Javier Pérez</td>
+                        <td>javier.perez@gmail.com</td>
+                        <td><span class="bagde">Paciente</span></td>
+                        <td>Activo</td>
+                        <td><button class="btn_cambiar-rol">Cambiar Rol</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Clínica NutriVida - Temuco, Región de La Araucanía</p>
+    </footer>
+
+    <script src="js/admin.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -11,3 +12,105 @@
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
+=======
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clínica NutriVida - Inicio</title>
+    <link rel="stylesheet" href="css/Estilo.css">
+   
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+</head>
+<body>
+
+    <header>
+        <div class="header-top">
+            <h1>Clínica NutriVida</h1>
+            <div class="header-contact">
+                <span> Telefono: +56 45 265 8967</span>
+                <span> WhatsApp: +56 9 3457 7166</span>
+            </div>
+        </div>   
+        
+        <nav class="header-nav">
+            <button id="menu-btn" class="menu-btn" aria-label="Abrir-menu">
+                <span id="icon-hamburger">☰</span>
+                <span id="icon-close" class="hidden">✕</span>
+            </button>
+
+            <div id="mobile-menu" class="nav-content hidden">
+                <div class="nav-links">
+                    <a href="index.html" class="mobile-link">Inicio</a>
+                    <a href="citas.html" class="mobile-link">Agendar Cita</a>
+                    <a href="ficha.html" class="mobile-link">Mi Ficha</a>
+                    <a href="admin.html" class="mobile-link">Administración</a>
+                </div>
+                <div  class="nav-aauth">
+                    <a href="#" id="btn-open-login" class="mobile-link">Iniciar Sesión</a>
+                    <a href="#" id="btn-open-register" class="btn-highlight  mobile-link">Registrarse</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+    <main>
+        <section class="card-box">
+            <h2>Bienvenido a Clínica NutriVida</h2>
+            <p>Atención nutricional especializada e integral en Temuco.</p>
+        </section>
+
+        <!-- Catalogo basico de precios -->
+        <section class="card-box">
+            <h3>Catálogo de Servicios y Tarifa</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Servicio</th>
+                        <th>Descripción</th>
+                        <th>Precio</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Consulta Nutricional Inicial</td>
+                        <td>Evaluación completa + antropometría</td>
+                        <td>$35.000</td>
+                    </tr>
+                    <tr>
+                        <td>Control Nutricional</td>
+                        <td>Seguimiento de pauta y avances</td>
+                        <td>$25.000</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        
+        <section class="card-box">
+            <h3>Ubicación en Temuco</h3>
+            <div id="mapa-temuco" style="height: 300px; margin-top: 10px;"></div>
+        </section>
+    </main>
+
+    <div id="auth-modal" class="modal-overlay"
+        <div class="modal-container">
+            <span  id="btn-close-modal" class="close-btn">&times;</span>
+            <div class="modal-tabs">
+                <buttin id=""tab-login
+ class            </div>
+        </div>
+
+    <footer>
+        <p>&copy; 2026 Clínica NutriVida - Temuco, Región de La Araucanía</p>
+    </footer>
+
+    
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="js/mapa.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
+>>>>>>> Stashed changes
