@@ -21,7 +21,6 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: relative;
 }
 
 nav a {
@@ -105,4 +104,5 @@ button:hover {
     background-color: #1b5e20;
 }
 
-
+/* ===============
+    FUNCIONARIOS 
