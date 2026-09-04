@@ -17,8 +17,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clínica NutriVida - Inicio</title>
+    <title>Clínica NutriVida - Nutrición y Bienestar Integral</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Estilos CSS -->
     <link rel="stylesheet" href="css/estilo.css">
+   
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 </head>
 <body>
@@ -46,132 +54,147 @@
     </header>
         
 
-    <!-- Carrusel Interactivo -->
-    <section class="carousel-container">
-        <div class="carousel-track">
-            <!-- Slide 1 -->
-            <div class="carousel-slide active" style="background-image: linear-gradient(rgba(13, 71, 161, 0.75), rgba(27, 94, 32, 0.75)), url('https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&q=80');">
-                <div class="hero-content">
-                    <span class="badge-hero">Atención Nutricional Especializada</span>
-                    <h2>Tu salud y bienestar en manos de profesionales</h2>
-                    <p>Especialistas en nutrición clínica, antropometría y planes alimenticios personalizados en Temuco.</p>
-                    <div class="hero-buttons">
-                        <a href="citas.html" class="btn-primary">Agendar Hora</a>
-                        <a href="#servicios" class="btn-secondary">Ver Servicios</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Slide 2 -->
-            <div class="carousel-slide" style="background-image: linear-gradient(rgba(13, 71, 161, 0.75), rgba(27, 94, 32, 0.75)), url('https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&w=1200&q=80');">
-                <div class="hero-content">
-                    <span class="badge-hero">Planes a tu Medida</span>
-                    <h2>Nutrición Deportiva y Control de Peso</h2>
-                    <p>Diseñamos programas alimenticios personalizados según tus objetivos físicos y de rendimiento.</p>
-                    <div class="hero-buttons">
-                        <a href="citas.html" class="btn-primary">Comenzar Ahora</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Slide 3 -->
-            <div class="carousel-slide" style="background-image: linear-gradient(rgba(13, 71, 161, 0.75), rgba(27, 94, 32, 0.75)), url('https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=1200&q=80');">
-                <div class="hero-content">
-                    <span class="badge-hero">Tecnología Médica</span>
-                    <h2>Evaluación Antropométrica Avanzada</h2>
-                    <p>Monitorea tu porcentaje de grasa y masa muscular con precisión profesional.</p>
-                    <div class="hero-buttons">
-                        <a href="ficha.html" class="btn-primary">Ver Mi Ficha</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Botones de navegación lateral -->
-        <button class="carousel-btn prev-btn" id="prevBtn" aria-label="Anterior">&#10094;</button>
-        <button class="carousel-btn next-btn" id="nextBtn" aria-label="Siguiente">&#10095;</button>
-
-        <!-- Puntos indicativos -->
-        <div class="carousel-indicators">
-            <span class="dot active" data-slide="0"></span>
-            <span class="dot" data-slide="1"></span>
-            <span class="dot" data-slide="2"></span>
-        </div>
-    </section>
-
-    <main class="main-container">
-        <!-- Accesos Rápidos Estilo Tarjeta -->
-        <section class="quick-access">
-            <a href="citas.html" class="access-card">
-                <div class="icon">📅</div>
-                <h3>Reserva de Citas</h3>
-                <p>Agenda tu atención médica online fácil y rápido.</p>
-            </a>
-            <a href="ficha.html" class="access-card">
-                <div class="icon">📋</div>
-                <h3>Portal Ficha Clínica</h3>
-                <p>Revisa tu historial, IMC y evolución corporal.</p>
-            </a>
-            <a href="admin.html" class="access-card">
-                <div class="icon">🔒</div>
-                <h3>Portal Personal</h3>
-                <p>Acceso restringido para el equipo clínico.</p>
-            </a>
+    <main>
+        <section class="card-box">
+            <h2>Bienvenido a Clínica NutriVida</h2>
+            <p>Atención nutricional especializada e integral en Temuco.</p>
         </section>
 
-        <!-- Catálogo de Servicios Destacados -->
-        <section id="servicios" class="bupa-section">
-            <div class="section-title">
-                <h2>Servicios y Tarifas</h2>
-                <hr>
-            </div>
-            
-            <div class="grid-servicios">
-                <div class="card-servicio">
-                    <div class="card-tag">Consulta Inicial</div>
-                    <h3>Evaluación Nutricional Integral</h3>
-                    <p>Evaluación médica completa, anamnesis alimentaria y antropometría básica.</p>
-                    <div class="price">$35.000</div>
-                    <a href="citas.html" class="btn-link">Agendar atención &rarr;</a>
-                </div>
-
-                <div class="card-servicio">
-                    <div class="card-tag">Seguimiento</div>
-                    <h3>Control Nutricional</h3>
-                    <p>Seguimiento de pauta alimenticia, revisión de pautas y evaluación de avances.</p>
-                    <div class="price">$25.000</div>
-                    <a href="citas.html" class="btn-link">Agendar atención &rarr;</a>
-                </div>
-            </div>
+        <!-- Catalogo basico de precios -->
+        <section class="card-box">
+            <h3>Catálogo de Servicios y Tarifa</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Servicio</th>
+                        <th>Descripción</th>
+                        <th>Precio</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Consulta Nutricional Inicial</td>
+                        <td>Evaluación completa + antropometría</td>
+                        <td>$35.000</td>
+                    </tr>
+                    <tr>
+                        <td>Control Nutricional</td>
+                        <td>Seguimiento de pauta y avances</td>
+                        <td>$25.000</td>
+                    </tr>
+                </tbody>
+            </table>
         </section>
 
-        <!-- Ubicación de la Clínica -->
-        <section class="bupa-section location-section">
-            <div class="location-grid">
-                <div class="location-info">
-                    <h2>Ubicación en Temuco</h2>
-                    <p>Visítanos en nuestra sede equipada con la mejor infraestructura para tu atención.</p>
-                    <ul class="info-list">
-                        <li>📍 <strong>Dirección:</strong> Av. Alemania 0281, Temuco, Región de La Araucanía.</li>
-                        <li>🕒 <strong>Horario:</strong> Lunes a Viernes de 08:30 a 19:00 hrs.</li>
-                        <li>📞 <strong>Contacto:</strong> +56 45 2 990000</li>
-                    </ul>
-                </div>
-                <div class="location-map">
-                    <div id="mapa-temuco" style="height: 320px; border-radius: 12px;"></div>
-                </div>
-            </div>
+        
+        <section class="card-box">
+            <h3>Ubicación en Temuco</h3>
+            <div id="mapa-temuco" style="height: 300px; margin-top: 10px;"></div>
         </section>
     </main>
 
+    <!-- Seccion: Equipo de Funcionarios -->
+        <section class="card-box nv-team-section">
+            <div class="nv-team-header">
+                <h3>Nuestro Equipo Profesional</h3>
+                <p>Especialistas dedicados a construir tu bienestar integral.</p>
+            </div>
+
+            <div class="nv-team-grid">
+                <!-- 1. Valentina Silva -->
+                <article class="nv-member-card">
+                    <div class="nv-member-img">
+                        <img src="assets/img/valentina-silva.jpg" alt="Valentina Silva">
+                        <span class="nv-badge-pill">Presencial & Online</span>
+                    </div>
+                    <div class="nv-member-info">
+                        <h4>Valentina Silva</h4>
+                        <span class="nv-member-role">Nutricionista Deportiva</span>
+                        <p class="nv-member-desc">
+                            Enfoque integral en recomposición corporal y rendimiento físico de alto nivel.<br>
+                            Planes adaptados a tu disciplina sin pasar hambre.
+                        </p>
+                        <a href="nosotros.html#valentina" class="nv-link-ficha">Ver ficha completa &rarr;</a>
+                    </div>
+                </article>
+
+                <!-- 2. Constanza Díaz -->
+                <article class="nv-member-card">
+                    <div class="nv-member-img">
+                        <img src="assets/img/constanza-diaz.jpg" alt="Constanza Díaz">
+                        <span class="nv-badge-pill">Presencial & Online</span>
+                    </div>
+                    <div class="nv-member-info">
+                        <h4>Constanza Díaz</h4>
+                        <span class="nv-member-role">Nutricionista Clínica</span>
+                        <p class="nv-member-desc">
+                            Manejo nutricional de patologías crónicas y digestivas.<br>
+                            Tratamiento personalizado en resistencia a la insulina y salud metabólica.
+                        </p>
+                        <a href="nosotros.html#constanza" class="nv-link-ficha">Ver ficha completa &rarr;</a>
+                    </div>
+                </article>
+
+                <!-- 3. Andrea Muñoz -->
+                <article class="nv-member-card">
+                    <div class="nv-member-img">
+                        <img src="assets/img/andrea-munoz.jpg" alt="Andrea Muñoz">
+                        <span class="nv-badge-pill">Atención Presencial</span>
+                    </div>
+                    <div class="nv-member-info">
+                        <h4>Andrea Muñoz</h4>
+                        <span class="nv-member-role">Nutricionista Pediátrica</span>
+                        <p class="nv-member-desc">
+                            Acompañamiento cercano en etapas clave de crecimiento y método BLW.<br>
+                            Hábitos familiares saludables y relación positiva con la comida.
+                        </p>
+                        <a href="nosotros.html#andrea" class="nv-link-ficha">Ver ficha completa &rarr;</a>
+                    </div>
+                </article>
+
+                <!-- 4. Kevin Carrasco -->
+                <article class="nv-member-card">
+                    <div class="nv-member-img">
+                        <img src="assets/img/kevin-carrasco.jpg" alt="Kevin Carrasco">
+                        <span class="nv-badge-pill">Presencial & Online</span>
+                    </div>
+                    <div class="nv-member-info">
+                        <h4>Kevin Carrasco</h4>
+                        <span class="nv-member-role">Nutricionista Deportivo</span>
+                        <p class="nv-member-desc">
+                            Especializado en ganancia de masa muscular y fuerza.<br>
+                            Estrategias con base científica para atletas y entrenamiento físico.
+                        </p>
+                        <a href="nosotros.html#kevin" class="nv-link-ficha">Ver ficha completa &rarr;</a>
+                    </div>
+                </article>
+
+                <!-- 5. Marco Valencia -->
+                <article class="nv-member-card">
+                    <div class="nv-member-img">
+                        <img src="assets/img/marco-valencia.jpg" alt="Marco Valencia">
+                        <span class="nv-badge-pill">Atención Online</span>
+                    </div>
+                    <div class="nv-member-info">
+                        <h4>Marco Valencia</h4>
+                        <span class="nv-member-role">Especialista en Psiconutrición</span>
+                        <p class="nv-member-desc">
+                            Abordaje integrativo en la relación emocional y mental con la comida.<br>
+                            Herramientas prácticas contra la ansiedad y alimentación consciente.
+                        </p>
+                        <a href="nosotros.html#marco" class="nv-link-ficha">Ver ficha completa &rarr;</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
     <footer>
-        <div class="footer-container">
-            <p>&copy; 2026 Clínica NutriVida - Temuco, Región de La Araucanía. Todos los derechos reservados.</p>
-        </div>
+        <p>&copy; 2026 Clínica NutriVida - Temuco, Región de La Araucanía</p>
     </footer>
 
-    <!-- Scripts -->
+    
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="js/carrusel.js"></script>
     <script src="js/mapa.js"></script>
     <script src="js/carrusel.js"></script>
     <script src="js/main.js"></script>
