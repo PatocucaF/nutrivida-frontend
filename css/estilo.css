@@ -581,5 +581,7 @@ nav a {
         align-items: center;
     }
 
-
+    .nav-links, .nav-aauth {
+        align-items: center;
+    }
 }
