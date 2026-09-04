@@ -1,3 +1,17 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>nutrivida-frontend</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -10,16 +24,31 @@
 <body>
 
     <header>
-        <div class="header-container">
-            <h1 class="logo">Clínica <span>NutriVida</span></h1>
-            <nav>
-                <a href="index.html" class="active">Inicio</a>
-                <a href="citas.html">Agendar Cita</a>
-                <a href="ficha.html">Mi Ficha</a>
-                <a href="admin.html">Administración</a>
-            </nav>
-        </div>
+        <div class="header-top">
+            <h1>Clínica NutriVida</h1>  
+        </div>   
+        
+        <nav class="header-nav">
+            <button id="menu-btn" class="menu-btn" aria-label="Abrir-menu">
+                <span id="icon-hamburger">☰</span>
+                <span id="icon-close" class="hidden">✕</span>
+            </button>
+
+            <div id="mobile-menu" class="nav-content hidden">
+                <div class="nav-links">
+                    <a href="index.html" class="mobile-link">Inicio</a>
+                    <a href="citas.html" class="mobile-link">Agendar Cita</a>
+                    <a href="ficha.html" class="mobile-link">Mi Ficha</a>
+                    <a href="admin.html" class="mobile-link">Administración</a>
+                </div>
+                <div  class="nav-aauth">
+                    <a href="#" id="btn-open-login" class="mobile-link">Iniciar Sesión</a>
+                    <a href="#" id="btn-open-register" class="btn-highlight  mobile-link">Registrarse</a>
+                </div>
+            </div>
+        </nav>
     </header>
+        
 
     <!-- Carrusel Interactivo -->
     <section class="carousel-container">

@@ -11,12 +11,32 @@
 <body>
 
     <header>
-        <h1>Clínica NutriVida</h1>
-        <nav>
-            <a href="index.html">Inicio</a>
-            <a href="citas.html">Agendar Cita</a>
-            <a href="ficha.html">Mi Ficha</a>
-            <a href="admin.html">Administración</a>
+        <div class="header-top">
+            <h1>Clínica NutriVida</h1>
+            <div class="header-contact">
+                <span> Telefono: +56 45 265 8967</span>
+                <span> WhatsApp: +56 9 3457 7166</span>
+            </div>
+        </div>   
+        
+        <nav class="header-nav">
+            <button id="menu-btn" class="menu-btn" ariass-label="Abrir-menu">
+                <span id="icon-hamburger">☰</span>
+                <span id="icon-close" class="hidden">✕</span>
+            </button>
+
+            <div id="mobile-menu" class="nav-content hidden">
+                <div class="nav-links">
+                    <a href="index.html" class="mobile-link">Inicio</a>
+                    <a href="citas.html" class="mobile-link">Agendar Cita</a>
+                    <a href="ficha.html" class="mobile-link">Mi Ficha</a>
+                    <a href="admin.html" class="mobile-link">Administración</a>
+                </div>
+                <div  class="nav-aauth">
+                    <a href="#" id="btn-open-login" class="mobile-link">Iniciar Sesión</a>
+                    <a href="#" id="btn-open-register" class="btn-highlight  mobile-link">Registrarse</a>
+                </div>
+            </div>
         </nav>
     </header>
 
