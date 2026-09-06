@@ -36,7 +36,13 @@
             </div>
         </div>
     </header>
-        
+    
+    <!-- AURAS FLOTANTES -->
+        <div class="nv-aura nv-aura-1"></div>
+        <div class="nv-aura nv-aura-2"></div>
+        <div class="nv-aura nv-aura-3"></div>
+        <div class="nv-aura nv-aura-4"></div>
+
         <!--1. CARRUSEL-->
         <section class = "nv-carousel-wrapper">
             <div class = "carousel-container">
@@ -84,146 +90,180 @@
 
 
 
-    <main>
-        <!-- 3. SECCIÓN SERVICIOS Y RECURSOS -->
-        <section class="nv-servicios-seccion">
-            
-            <!-- Fila superior: Servicios (izquierda) -  Mi Ficha (derecha) -->
-            <div class="nv-servicios-grid">
-                
-                <!-- Izquierda: Servicios y Especialidades -->
-                <div class="nv-col-servicios">
-                    <h3>Servicios y Especialidades</h3>
-                    <div class="nv-botones-servicios">
-                        <a href="citas.html?esp=pediatria" class="nv-btn-servicio">Pediatría</a>
-                        <a href="citas.html?esp=clinica" class="nv-btn-servicio">Clínica</a>
-                        <a href="citas.html?esp=deportiva" class="nv-btn-servicio">Deportiva</a>
-                        <a href="citas.html?esp=psiconutricion" class="nv-btn-servicio">Psiconutrición</a>
+    <main>  
+<!-- ==========================================
+         SECCIÓN SERVICIOS Y ESPECIALIDADES
+    =========================================== -->
+    <section id="servicios" class="nv-servicios-seccion">
+        <div class="nv-servicios-contenedor">
+            <h3 class="nv-servicios-titulo">Servicios y Especialidades</h3>
+
+            <!-- Cuadrícula 2x2 de cápsulas flotantes -->
+            <div class="nv-grilla-servicios">
+                <div class="nv-capsula-servicio">
+                    <span class="nv-capsula-nombre">Pediatría</span>
+                </div>
+                <div class="nv-capsula-servicio">
+                    <span class="nv-capsula-nombre">Clínica</span>
+                </div>
+                <div class="nv-capsula-servicio">
+                    <span class="nv-capsula-nombre">Deportiva</span>
+                </div>
+                <div class="nv-capsula-servicio">
+                    <span class="nv-capsula-nombre">Psiconutrición</span>
+                </div>
+            </div>
+
+            <!-- Franja horizontal Mi Ficha -->
+            <div class="nv-franja-ficha">
+                <div class="nv-franja-texto">
+                    <h4>Si ya perteneces a nuestra familia</h4>
+                    <p>Revisa tus pautas y progreso clínico aquí</p>
+                </div>
+                <a href="ficha.html" class="nv-btn-franja-ficha">Mi Ficha &rarr;</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         SECCIÓN EQUIPO MÉDICO (HORIZONTALES)
+    =========================================== -->
+    <section id="equipo" class="nv-equipo-seccion">
+        <div class="nv-equipo-header">
+            <h3>EQUIPO MÉDICO - NUTRIVIDA</h3>
+            <p>Especialistas dedicados a construir tu bienestar integral.</p>
+        </div>
+
+        <div class="nv-equipo-grid-nodulos">
+
+            <!-- 1. Valentina Silva -->
+            <article class="nv-nodulo-doc">
+                <div class="nv-nodulo-foto">
+                    <img src="img/Valentina_Silva.jpg" alt="Valentina Silva">
+                </div>
+                <div class="nv-nodulo-info">
+                    <div class="nv-nodulo-top">
+                        <span class="nv-badge-modalidad" style="background:#f0f7ff !important; color:#80a1d4 !important; border:1px solid #80a1d4 !important;">Presencial & Online</span>
+                        <h4>Valentina Silva <span style="color:#75c9c8 !important;">— Deportiva</span></h4>
+                    </div>
+                    <p class="nv-nodulo-desc">
+                        Enfoque integral en recomposición corporal y rendimiento físico de alto nivel. Planes adaptados a tu disciplina.
+                    </p>
+                    <div class="nv-nodulo-footer">
+                        <a href="citas.html" class="nv-btn-agendar-card">Agendar cita &rarr;</a>
                     </div>
                 </div>
+            </article>
 
-                <!-- Derecha: Si ya perteneces a nuestra familia -->
-                <aside class="nv-card-familia">
-                    <h4>Si ya perteneces a nuestra familia</h4>
-                    <p>Revisa tu progreso aquí:</p>
-                    <a href="ficha.html" class="nv-btn-ficha">Mi Ficha</a>
-                </aside>
+            <!-- 2. Constanza Díaz -->
+            <article class="nv-nodulo-doc">
+                <div class="nv-nodulo-foto">
+                    <img src="img/Constanza_Diaz.jpg" alt="Constanza Díaz">
+                </div>
+                <div class="nv-nodulo-info">
+                    <div class="nv-nodulo-top">
+                        <span class="nv-badge-modalidad">Presencial & Online</span>
+                        <h4>Constanza Díaz <span>— Clínica</span></h4>
+                    </div>
+                    <p class="nv-nodulo-desc">
+                        Manejo nutricional de patologías crónicas y digestivas. Tratamiento personalizado en resistencia a la insulina y salud metabólica.
+                    </p>
+                    <div class="nv-nodulo-footer">
+                        <a href="citas.html" class="nv-btn-agendar-card">Agendar cita &rarr;</a>
+                    </div>
+                </div>
+            </article>
 
+            <!-- 3. Andrea Muñoz -->
+            <article class="nv-nodulo-doc">
+                <div class="nv-nodulo-foto">
+                    <img src="img/Andrea_Muñoz.jpg" alt="Andrea Muñoz">
+                </div>
+                <div class="nv-nodulo-info">
+                    <div class="nv-nodulo-top">
+                        <span class="nv-badge-modalidad">Atención Presencial</span>
+                        <h4>Andrea Muñoz <span>— Pediátrica</span></h4>
+                    </div>
+                    <p class="nv-nodulo-desc">
+                        Acompañamiento cercano en etapas clave de crecimiento y método BLW. Hábitos familiares saludables y relación positiva con la comida.
+                    </p>
+                    <div class="nv-nodulo-footer">
+                        <a href="citas.html" class="nv-btn-agendar-card">Agendar cita &rarr;</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 4. Kevin Carrasco -->
+            <article class="nv-nodulo-doc">
+                <div class="nv-nodulo-foto">
+                    <img src="img/Kevin_Carrasco.jpg" alt="Kevin Carrasco">
+                </div>
+                <div class="nv-nodulo-info">
+                    <div class="nv-nodulo-top">
+                        <span class="nv-badge-modalidad">Presencial & Online</span>
+                        <h4>Kevin Carrasco <span>— Deportivo</span></h4>
+                    </div>
+                    <p class="nv-nodulo-desc">
+                        Especializado en ganancia de masa muscular y fuerza. Estrategias con base científica para atletas y entrenamiento físico.
+                    </p>
+                    <div class="nv-nodulo-footer">
+                        <a href="citas.html" class="nv-btn-agendar-card">Agendar cita &rarr;</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 5. Marco Valencia -->
+            <article class="nv-nodulo-doc">
+                <div class="nv-nodulo-foto">
+                    <img src="img/Marco_Valencia.jpg" alt="Marco Valencia">
+                </div>
+                <div class="nv-nodulo-info">
+                    <div class="nv-nodulo-top">
+                        <span class="nv-badge-modalidad">Atención Online</span>
+                        <h4>Marco Valencia <span>— Psiconutrición</span></h4>
+                    </div>
+                    <p class="nv-nodulo-desc">
+                        Abordaje integrativo en la relación emocional y mental con la comida. Herramientas prácticas contra la ansiedad y alimentación consciente.
+                    </p>
+                    <div class="nv-nodulo-footer">
+                        <a href="citas.html" class="nv-btn-agendar-card">Agendar cita &rarr;</a>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+
+    </section>
+
+       <!-- MISIÓN Y VISIÓN -->
+        <section id="nosotros" class="nv-mision-vision-seccion">
+            <div class="nv-mv-header">
+                <h3>NUESTRO COMPROMISO</h3>
+                <p>Pilares fundamentales que guían nuestra labor en La Araucanía.</p>
             </div>
 
-            <!-- Fila inferior: Banner de dudas -->
-            <div class="nv-banner-dudas">
-                <p>¿Tienes dudas sobre conceptos nutricionales?</p>
-                <a href="#glosario" class="nv-btn-dudas">Revísalos aquí</a>
-            </div>
+            <div class="nv-mv-grid">
+                <!-- Tarjeta Misión -->
+                <div class="nv-mv-card">
+                    <h4>Nuestra Misión</h4>
+                    <p>
+                        Brindar atención nutricional personalizada con estricta base científica, 
+                        acompañando a cada paciente en la adopción de hábitos sostenibles que fomenten una salud 
+                        integral duradera, empática y sin restricciones innecesarias.
+                    </p>
+                </div>
 
-        </section>
-    <!-- 4. Equipo de Funcionarios -->
-        <section id="equipo" class="nv-equipo-seccion">
-            <div class="nv-equipo-header">
-                <h3>EQUIPO MÉDICO - NUTRIVIDA</h3>
-                <p>Especialistas dedicados a construir tu bienestar integral.</p>
-            </div>
-
-            <div class="nv-equipo-grid-nodulos">
-
-                <!-- 1. Valentina Silva -->
-                <article class="nv-nodulo-doc">
-                    <div class="nv-nodulo-foto">
-                        <img src="img/Valentina_Silva.jpg" alt="Valentina Silva">
-                    </div>
-                    <div class="nv-nodulo-info">
-                        <div class="nv-nodulo-top">
-                            <span class="nv-badge-pill">Presencial & Online</span>
-                            <h4>Valentina Silva <span>— Deportiva</span></h4>
-                        </div>
-                        <p class="nv-nodulo-desc">
-                            Enfoque integral en recomposición corporal y rendimiento físico de alto nivel. Planes adaptados a tu disciplina.
-                        </p>
-                        <div class="nv-nodulo-footer">
-                            <a href="citas.html" class="nv-btn-agendar-nodulo">Agendar cita</a>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- 2. Constanza Díaz -->
-                <article class="nv-nodulo-doc">
-                    <div class="nv-nodulo-foto">
-                        <img src="img/Constanza_Diaz.jpg" alt="Constanza Díaz">
-                    </div>
-                    <div class="nv-nodulo-info">
-                        <div class="nv-nodulo-top">
-                            <span class="nv-badge-pill">Presencial & Online</span>
-                            <h4>Constanza Díaz <span>— Clínica</span></h4>
-                        </div>
-                        <p class="nv-nodulo-desc">
-                            Manejo nutricional de patologías crónicas y digestivas. Tratamiento personalizado en resistencia a la insulina y salud metabólica.
-                        </p>
-                        <div class="nv-nodulo-footer">
-                            <a href="citas.html" class="nv-btn-agendar-nodulo">Agendar cita</a>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- 3. Andrea Muñoz -->
-                <article class="nv-nodulo-doc">
-                    <div class="nv-nodulo-foto">
-                        <img src="img/Andrea_Muñoz.jpg" alt="Andrea Muñoz">
-                    </div>
-                    <div class="nv-nodulo-info">
-                        <div class="nv-nodulo-top">
-                            <span class="nv-badge-pill">Atención Presencial</span>
-                            <h4>Andrea Muñoz <span>— Pediátrica</span></h4>
-                        </div>
-                        <p class="nv-nodulo-desc">
-                            Acompañamiento cercano en etapas clave de crecimiento y método BLW. Hábitos familiares saludables y relación positiva con la comida.
-                        </p>
-                        <div class="nv-nodulo-footer">
-                            <a href="citas.html" class="nv-btn-agendar-nodulo">Agendar cita</a>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- 4. Kevin Carrasco -->
-                <article class="nv-nodulo-doc">
-                    <div class="nv-nodulo-foto">
-                        <img src="img/Kevin_Carrasco.jpg" alt="Kevin Carrasco">
-                    </div>
-                    <div class="nv-nodulo-info">
-                        <div class="nv-nodulo-top">
-                            <span class="nv-badge-pill">Presencial & Online</span>
-                            <h4>Kevin Carrasco <span>— Deportivo</span></h4>
-                        </div>
-                        <p class="nv-nodulo-desc">
-                            Especializado en ganancia de masa muscular y fuerza. Estrategias con base científica para atletas y entrenamiento físico.
-                        </p>
-                        <div class="nv-nodulo-footer">
-                            <a href="citas.html" class="nv-btn-agendar-nodulo">Agendar cita</a>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- 5. Marco Valencia -->
-                <article class="nv-nodulo-doc">
-                    <div class="nv-nodulo-foto">
-                        <img src="img/Marco_Valencia.jpg" alt="Marco Valencia">
-                    </div>
-                    <div class="nv-nodulo-info">
-                        <div class="nv-nodulo-top">
-                            <span class="nv-badge-pill">Atención Online</span>
-                            <h4>Marco Valencia <span>— Psiconutrición</span></h4>
-                        </div>
-                        <p class="nv-nodulo-desc">
-                            Abordaje integrativo en la relación emocional y mental con la comida. Herramientas prácticas contra la ansiedad y alimentación consciente.
-                        </p>
-                        <div class="nv-nodulo-footer">
-                            <a href="citas.html" class="nv-btn-agendar-nodulo">Agendar cita</a>
-                        </div>
-                    </div>
-                </article>
-
+                <!-- Tarjeta Visión -->
+                <div class="nv-mv-card">
+                    <h4>Nuestra Visión</h4>
+                    <p>
+                        Ser el centro de referencia en bienestar nutricional y salud preventiva en Temuco y 
+                        el sur de Chile, reconocidos por nuestra excelencia clínica, calidez humana y enfoque integrador.
+                    </p>
+                </div>
             </div>
         </section>
+
         <!-- 5. CONTACTO, UBICACION Y MAPA-->
         <section id="contacto" class="nv-contacto-seccion">
             <div class="nv-contacto-grid">
@@ -234,7 +274,7 @@
                     <p class="nv-contacto-bajada">Visítanos en nuestra sede central o comunícate directamente con nuestro equipo de atención.</p>
 
                     <div class="nv-info-item">
-                        <div class="nv-info-icono">📍</div>
+                        <div class="nv-info-icono">◎</div>
                         <div>
                             <h5>Ubicación</h5>
                             <p>Av. Alemania 0420, Temuco, Región de La Araucanía</p>
@@ -242,7 +282,7 @@
                     </div>
 
                     <div class="nv-info-item">
-                        <div class="nv-info-icono">🕒</div>
+                        <div class="nv-info-icono">⏱</div>
                         <div>
                             <h5>Horarios de Atención</h5>
                             <p>Lunes a Viernes: 08:30 – 19:30 hrs<br>Sábados: 09:00 – 14:00 hrs</p>
@@ -250,7 +290,7 @@
                     </div>
 
                     <div class="nv-info-item">
-                        <div class="nv-info-icono">📞</div>
+                        <div class="nv-info-icono">☏</div>
                         <div>
                             <h5>Contacto Directo</h5>
                             <p>Teléfono: +56 45 234 5678<br>WhatsApp: +56 9 8765 4321</p>

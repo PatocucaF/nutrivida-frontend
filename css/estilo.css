@@ -62,7 +62,7 @@ nav a {
 
 nav a:hover {
     background-color: rgba(255, 255, 255, 0.2);
-    color: #f7f4ea;
+    color: #ffffff;
 }
 
 main {
@@ -220,7 +220,7 @@ tr:hover {
 
 .status-warning {
     background-color: #fff3e0;
-    color: #ef6c00;
+    color: #e76f51;
     padding: 0.2rem 0.6rem;
     border-radius: 4px;
     font-weight: 600;
@@ -275,7 +275,7 @@ tr {
 /* Accesibilidad y foco visual */
 nav a:focus,
 button:focus {
-    outline: 2px solid #f7f4ea;
+    outline: 2px solid #ffffff;
     outline-offset: 2px;
 }
 
@@ -396,19 +396,23 @@ button:focus {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: rgba(0, 0, 0, 0.4);
-    color: white;
-    border: none;
-    font-size: 1.8rem;
-    padding: 10px 16px;
+    background: transparent !important; /* Quita el fondo negro */
+    color: #ffffff !important;           /* Flecha blanca pura */
+    border: none !important;
+    font-size: 2.5rem;                   /* Tamaño visible para la flecha suelta */
+    padding: 10px;
     cursor: pointer;
-    border-radius: 50%;
+    border-radius: 0 !important;         /* Borra el círculo */
+    box-shadow: none !important;
     z-index: 10;
-    transition: background 0.3s;
+    transition: color 0.2s ease, transform 0.2s ease;
 }
 
+/* Al pasar el mouse encima: cambia a naranjo y crece un poquito */
 .carousel-btn:hover {
-    background: rgba(46, 125, 50, 0.8);
+    background: transparent !important;
+    color: #e76f51 !important;           /* Naranjo */
+    transform: translateY(-50%) scale(1.2);
 }
 
 .prev-btn { left: 20px; }
@@ -564,14 +568,14 @@ button:focus {
 .slide-content {
     max-width: 850px;
     text-align: center;
-    color: #f7f4ea;
+    color: #ffffff;
     z-index: 2;
 }
 
 .slide-content h2 {
     font-size: 2.2rem;
     font-weight: 700;
-    color: #f7f4ea;    
+    color: #ffffff;    
     margin-bottom: 0.8rem;
     text-shadow: 0 2px 6px rgba(0, 0, 0, 0.75);
 }
@@ -586,7 +590,7 @@ button:focus {
 /*Boton Agendar*/
 .btn-hero {
     display: inline-block;
-    background-color: #f7f4ea;
+    background-color: #ffffff;
     color: #1e293b;
     padding: 12px 28px;
     border-radius: 6px;
@@ -648,7 +652,7 @@ button:focus {
 }
 
 .dot.active {
-    background-color: #f7f4ea;
+    background-color: #ffffff;
     transform:  scale(1.25);
 }
 
@@ -735,328 +739,276 @@ header {
     text-decoration: underline !important;
 }
 
-/* SERVICIOS, MI FICHA Y DUDAS */
+/* ===================================================
+   1. MÓDULO DE SERVICIOS Y ACCESO RÁPIDO
+====================================================== */
 .nv-servicios-seccion {
-    max-width: 1100px;
-    margin: 2.5rem auto;
-    padding: 0 1.5rem;
-}
-
-/* Fila dividida servicios (izq), ficha (der) */
-.nv-servicios-grid {
-    display: grid;
-    grid-template-columns: 2fr 1.2fr;
-    gap: 2rem;
-    align-items: stretch;
-}
-
-/* Columna Servicios */
-.nv-col-servicios h3 {
-    font-size: 1.5rem;
-    color: #75c9c8;
-    margin-bottom: 1.2rem;
-}
-
-.nv-botones-servicios {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
-}
-
-.nv-btn-servicio {
+    padding: 2.5rem 1.5rem;
     display: flex;
-    align-items: center;
     justify-content: center;
-    padding: 12px;
-    border: 2px solid #6a94d3;
-    border-radius: 8px;
-    color: #6a94d3;
-    font-weight: 700;
-    text-decoration: none;
-    background: #f7f4ea;
-    transition: all 0.2s ease;
 }
 
-.nv-btn-servicio:hover {
-    background-color: #6a94d3;
-    color: #f7f4ea;
-    transform: translateY(-2px);
-}
-
-/* Si ya perteneces */
-.nv-card-familia {
-    background: #f4fbf4;
-    border: 2px solid #c8e6c9;
-    border-radius: 12px;
-    padding: 1.5rem;
+.nv-servicios-contenedor {
+    width: 100%;
+    max-width: 520px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+    gap: 1.2rem;
 }
 
-.nv-card-familia h4 {
-    color: #75c9c8;
-    margin: 0 0 0.5rem 0;
-    font-size: 1.15rem;
-}
-
-.nv-card-familia p {
-    color: #475569;
-    font-size: 0.95rem;
-    margin: 0 0 1rem 0;
-}
-
-.nv-btn-ficha {
-    display: inline-block;
-    background-color: #f7f4ea;
-    color: #75c9c8;
-    border: 1.5px solid #75c9c8;
-    padding: 8px 22px;
-    border-radius: 6px;
+.nv-servicios-titulo {
+    color: #80a1d4;
+    font-size: 1.45rem;
     font-weight: 700;
-    text-decoration: none;
-    transition: all 0.2s ease;
-}
-
-.nv-btn-ficha:hover {
-    background-color: #75c9c8;
-    color: #f7f4ea;
-}
-
-/* Banner inferior de dudas */
-.nv-banner-dudas {
-    margin-top: 1.8rem;
-    background-color: #f7f4ea;
-    border: 1.5px solid #e2e8f0;
-    border-radius: 10px;
-    padding: 1rem 1.8rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-}
-
-.nv-banner-dudas p {
+    text-align: left;
     margin: 0;
-    font-size: 1.05rem;
-    font-weight: 600;
-    color: #1e293b;
 }
 
-.nv-btn-dudas {
-    background-color: #f4a261;
-    color: #1e293b;
+/* Grilla 2x2 */
+.nv-grilla-servicios {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+}
+
+/* Cápsula de servicio individual */
+.nv-capsula-servicio {
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 14px 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 8px 24px rgba(128, 161, 212, 0.12);
+    border: 1.5px solid transparent;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.nv-capsula-servicio:hover {
+    border-color: #e76f51;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 26px rgba(231, 111, 81, 0.22);
+}
+
+.nv-capsula-icono {
+    font-size: 1.35rem;
+}
+
+.nv-capsula-nombre {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #80a1d4;
+}
+
+/* Franja horizontal 'Mi Ficha' */
+.nv-franja-ficha {
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 1.2rem 1.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 8px 24px rgba(128, 161, 212, 0.12);
+    border: none;
+    gap: 1rem;
+}
+
+.nv-franja-texto {
+    text-align: left;
+}
+
+.nv-franja-texto h4 {
+    margin: 0 0 4px 0;
+    font-size: 0.98rem;
+    color: #80a1d4;
+    font-weight: 700;
+}
+
+.nv-franja-texto p {
+    margin: 0;
+    font-size: 0.8rem;
+    color: #64748b;
+}
+
+/* Botón 'Mi Ficha' */
+.nv-btn-franja-ficha {
+    background: #ffffff;
+    border: 1.5px solid #80a1d4;
+    color: #80a1d4;
     padding: 8px 18px;
-    border-radius: 6px;
+    border-radius: 10px;
+    font-size: 0.85rem;
     font-weight: 700;
     text-decoration: none;
-    transition: background-color 0.2s ease;
+    white-space: nowrap;
+    transition: all 0.2s ease;
+    cursor: pointer;
 }
 
-.nv-btn-dudas:hover {
-    background-color: #e76f51;
-    color: #f7f4ea;
+.nv-btn-franja-ficha:hover {
+    background: #e76f51;
+    border-color: #e76f51;
+    color: #ffffff;
+    transform: translateX(3px);
+    box-shadow: 0 4px 14px rgba(231, 111, 81, 0.3);
 }
 
-/* Adaptabilidad para celular */
-@media (max-width: 768px) {
-    .nv-servicios-grid {
-        grid-template-columns: 1fr;
-    }
-    .nv-banner-dudas {
-        flex-direction: column;
-        gap: 12px;
-        text-align: center;
-    }
-}
-
-/* EQUIPO MÉDICO */
+//* ===================================================
+   EQUIPO MÉDICO DEFINITIVO (NÓDULOS HORIZONTALES)
+====================================================== */
 .nv-equipo-seccion {
     width: 95%;
-    max-width: 1250px;
-    margin: 3.5rem auto;
-    padding: 0;
+    max-width: 1200px;
+    margin: 4.5rem auto;
+    padding: 0 1.5rem;
+    box-sizing: border-box;
+}
+
+.nv-equipo-header {
     text-align: center;
+    margin-bottom: 2.8rem;
 }
 
 .nv-equipo-header h3 {
     font-size: 1.8rem;
     color: #75c9c8;
-    margin-bottom: 0.3rem;
+    margin: 0 0 0.4rem 0;
     font-weight: 700;
 }
 
 .nv-equipo-header p {
     color: #64748b;
     font-size: 0.95rem;
-    margin-bottom: 2.2rem;
+    margin: 0;
 }
 
-/* 5 columnas horizontales en una sola fila */
-.nv-equipo-fila-horizontal {
-    display: grid !important;
-    grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
-    gap: 16px;
-    align-items: stretch;
+.nv-equipo-grid-nodulos {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.8rem;
 }
 
-/* Tarjeta base con efecto marco */
-.nv-tarjeta-doc {
-    background: #f7f4ea;
-    border-radius: 12px;
-    overflow: hidden;
+.nv-nodulo-doc {
     display: flex;
-    flex-direction: column;
-    text-align: center;
+    flex-direction: row;
+    align-items: stretch;
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 18px;
+    gap: 18px;
+    box-shadow: 0 10px 25px rgba(128, 161, 212, 0.15);
+    border: none;
+    min-height: 190px;
+    box-sizing: border-box;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
-    padding: 6px; /* Espacio interno para que el borde parezca marco */
 }
 
-.nv-tarjeta-doc:hover {
-    transform: translateY(-5px);
+.nv-nodulo-doc:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 30px rgba(128, 161, 212, 0.22);
 }
 
-/* MARCO VERDE MATCHA */
-.nv-tarjeta-doc.card-verde {
-    border: 2.5px solid #6a94d3;
-    box-shadow: 0 4px 12px rgba(46, 125, 50, 0.15);
-}
-
-/* MARCO CELESTE */
-.nv-tarjeta-doc.card-celeste {
-    border: 2.5px solid #38bdf8;
-    box-shadow: 0 4px 12px rgba(56, 189, 248, 0.2);
-}
-
-/* Imagen dentro del marco */
-.nv-doc-img-wrap {
-    position: relative;
-    width: 100%;
-    height: 150px;
-    border-radius: 8px;
+.nv-nodulo-foto {
+    width: 140px;
+    min-width: 140px;
+    max-width: 140px;
+    height: auto;
+    border-radius: 14px;
     overflow: hidden;
+    margin: 0;
+    background: #f1f5f9;
 }
 
-.nv-badge-modalidad {
-    position: absolute;
-    bottom: 8px;
-    left: 8px;
-    background-color: #6a94d3; /* Verde oscuro semitransparente */
-    color: #f7f4ea;
-    font-size: 0.65rem;
-    font-weight: 600;
-    padding: 3px 7px;
-    border-radius: 4px;
-    backdrop-filter: blur(2px);
-    z-index: 2;
-    white-space: nowrap;
-}
-
-.nv-doc-img-wrap img {
+.nv-nodulo-foto img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: top center;
     display: block;
 }
 
-/* Contenido de texto */
-.nv-doc-cuerpo {
-    padding: 10px 6px;
+.nv-nodulo-info {
+    flex: 1;
     display: flex;
     flex-direction: column;
-    flex-grow: 1;
     justify-content: space-between;
+    text-align: left;
 }
 
-.nv-doc-cuerpo h4 {
-    margin: 4px 0 2px 0;
-    font-size: 0.95rem;
-    font-weight: 700;
-    color: #1e293b;
-}
-
-/* Especialidad limpia destacada */
-.nv-doc-especialidad {
-    font-size: 0.85rem;
-    font-weight: 700;
-    color: #75c9c8;
+.nv-nodulo-top {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
     margin-bottom: 8px;
-    display: block;
 }
 
-.nv-doc-cuerpo p {
-    font-size: 0.75rem;
-    color: #475569;
-    line-height: 1.3;
-    margin: 0 0 12px 0;
-}
-
-/* Botón "Ver ficha" delineado */
-.nv-btn-ver-perfil {
-    display: inline-block;
-    padding: 6px 12px;
-    border: 1.5px solid #75c9c8;
-    border-radius: 6px;
-    color: #75c9c8;
-    font-size: 0.8rem;
+.nv-badge-modalidad {
+    background-color: #e8f5e9;
+    color: #80a1d4;
+    font-size: 0.7rem;
     font-weight: 700;
-    text-decoration: none;
-    transition: all 0.2s ease;
-    margin-top: auto;
-}
-
-.nv-btn-ver-perfil:hover {
-    background-color: #75c9c8;
-    color: #f7f4ea;
-}
-
-/* Botón principal inferior */
-.nv-equipo-cta {
-    margin-top: 2.5rem;
-}
-
-.nv-btn-agendar-cta {
+    padding: 4px 10px;
+    border-radius: 6px;
+    text-transform: uppercase;
+    margin: 0;
     display: inline-block;
-    background-color: #f4a261;
+}
+
+.nv-nodulo-top h4 {
+    margin: 0;
+    font-size: 1.15rem;
+    font-weight: 700;
     color: #1e293b;
-    padding: 12px 36px;
-    border-radius: 8px;
-    font-weight: 700;
-    font-size: 1rem;
-    text-decoration: none;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.2s ease, transform 0.15s ease;
 }
 
-.nv-btn-agendar-cta:hover {
-    background-color: #e76f51;
-    color: #f7f4ea;
-    transform: translateY(-2px);
+.nv-nodulo-top h4 span {
+    color: #80a1d4;
+    font-size: 0.95rem;
+    font-weight: 600;
 }
 
-/*Boton de ficha*/
-.nv-link-ficha {
-    display: inline-block;
-    background-color: #f7f4ea;
-    color: #6a94d3 !important;
-    border: 1.5px solid #6a94d3;
-    padding: 6px 14px;
-    border-radius: 6px;
-    font-size: 0.8rem;
-    font-weight: 700;
-    text-decoration: none !important;
-    transition: all 0.2s ease;
+.nv-nodulo-desc {
+    font-size: 0.85rem;
+    color: #475569;
+    line-height: 1.45;
+    margin: 0 0 12px 0;
+    text-align: left;
+}
+
+.nv-nodulo-footer {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
     margin-top: auto;
-    align-self: center;
-}
-.nv-link-ficha:hover {
-    background-color: #6a94d3;
-    color: #f7f4ea !important;
 }
 
+.nv-btn-agendar-card {
+    background-color: #ffffff;
+    border: 1.5px solid #75c9c8;
+    color: #75c9c8;
+    padding: 7px 16px;
+    border-radius: 10px;
+    font-size: 0.82rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    display: inline-block;
+}
+
+.nv-btn-agendar-card:hover {
+    background-color: #e76f51;
+    border-color: #e76f51;
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(231, 111, 81, 0.25);
+}
+
+@media (max-width: 900px) {
+    .nv-equipo-grid-nodulos {
+        grid-template-columns: 1fr;
+    }
+}
 /* CONTACTO, UBICACIÓN Y MAPA */
 .nv-contacto-seccion {
     max-width: 1150px;
@@ -1069,7 +1021,7 @@ header {
     grid-template-columns: 1.1fr 1.4fr; 
     gap: 2.5rem;
     align-items: center;
-    background: #f7f4ea;
+    background: #ffffff;
     border: 1px solid #e2e8f0;
     border-radius: 14px;
     padding: 2.5rem;
@@ -1127,7 +1079,7 @@ header {
 .nv-btn-wsp {
     display: inline-block;
     background-color: #6a94d3;
-    color: #f7f4ea !important;
+    color: #ffffff !important;
     font-weight: 700;
     font-size: 0.85rem;
     padding: 10px 18px;
@@ -1202,7 +1154,7 @@ header {
 
 .nv-btn-agendar-card:hover {
     background-color: #75c9c8;
-    color: #f7f4ea;
+    color: #ffffff;
     border-color: #75c9c8;
     transform: translateY(-2px);
 }
@@ -1243,7 +1195,7 @@ header {
 
 /* Nódulo blanco redondeado y flotante */
 .nv-nodulo-doc {
-    background: #f7f4ea;
+    background: #ffffff;
     border-radius: 20px;
     padding: 1.2rem;
     display: flex;
@@ -1361,7 +1313,7 @@ header {
     padding: 6px 14px;
     font-size: 0.8rem;
     font-weight: 600;
-    color: #f7f4ea;
+    color: #ffffff;
     background-color: #75c9c8;
     border-radius: 8px;
     text-decoration: none;
@@ -1391,4 +1343,248 @@ header {
     .nv-nodulo-footer {
         justify-content: center;
     }
+}
+
+/* ===================================================
+   AURAS DECORATIVAS DE FONDO (AZUL Y CELESTE)
+====================================================== */
+body {
+    position: relative;
+    overflow-x: hidden;
+    background-color: #f7fafc;
+}
+
+.nv-aura {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(85px);
+    pointer-events: none;
+    z-index: -1;
+    opacity: 0.35;
+}
+
+.nv-aura-1 {
+    width: 420px;
+    height: 420px;
+    background: #0284c7; /* Azul */
+    top: 600px;
+    left: -100px;
+}
+
+.nv-aura-2 {
+    width: 500px;
+    height: 500px;
+    background: #38bdf8; /* Celeste brillante */
+    top: 1100px;
+    right: -120px;
+}
+
+.nv-aura-3 {
+    width: 450px;
+    height: 450px;
+    background: #0ea5e9;
+    top: 1700px;
+    left: -60px;
+}
+
+.nv-aura-4 {
+    width: 520px;
+    height: 520px;
+    background: #7dd3fc;
+    top: 2300px;
+    right: -100px;
+}
+
+/* ===================================================
+   FLECHAS DEL CARRUSEL (BLANCA -> NARANJA SIN CÍRCULO)
+====================================================== */
+/* 1. Limpiar el botón principal y quitar cualquier fondo o marco */
+.carousel-control-prev,
+.carousel-control-next,
+.carousel-control-prev *,
+.carousel-control-next * {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    outline: none !important;
+}
+
+/* 2. Tamaño y posición */
+.carousel-control-prev,
+.carousel-control-next {
+    width: 60px !important;
+    opacity: 0.9 !important;
+    transition: opacity 0.2s ease;
+}
+
+/* 3. Flecha en blanco puro por defecto */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    width: 45px !important;
+    height: 45px !important;
+    filter: brightness(0) invert(1) !important; /* Fuerza el ícono SVG de Bootstrap a blanco puro */
+    transition: filter 0.25s ease, transform 0.25s ease;
+}
+
+/* 4. Al pasar el cursor: cambia a Naranjo y da un micro-salto */
+.carousel-control-prev:hover .carousel-control-prev-icon,
+.carousel-control-next:hover .carousel-control-next-icon {
+    /* Filtro CSS exacto para convertir cualquier SVG blanco a Naranja (#f97316) */
+    filter: invert(53%) sepia(89%) saturate(2250%) hue-rotate(352deg) brightness(101%) contrast(97%) !important;
+    transform: scale(1.18);
+}
+
+
+/* ===================================================
+   TARJETAS DOCTORES (FONDO BLANCO PURO, SOMBRA + TEXTO JUSTIFICADO)
+====================================================== */
+.nv-nodulo-doc,
+.nv-tarjeta-doc {
+    background: #ffffff !important; /* Blanco puro, no crema */
+    box-shadow: 0 10px 28px rgba(15, 23, 42, 0.08) !important; /* Sombra más notoria */
+    border: 1px solid #e2e8f0;
+}
+
+.nv-nodulo-desc,
+.nv-member-desc {
+    text-align: justify !important; /* Texto justificado como pediste */
+    color: #475569;
+    font-size: 0.85rem;
+    line-height: 1.45;
+}
+
+/* ===================================================
+   SECCIÓN MISIÓN Y VISIÓN (ENTRE DOCTORES Y UBICACIÓN)
+====================================================== */
+.nv-mision-vision-seccion {
+    max-width: 1100px;
+    margin: 4.5rem auto;
+    padding: 0 1.5rem;
+}
+
+.nv-mv-header {
+    text-align: center;
+    margin-bottom: 2.2rem;
+}
+
+.nv-mv-header h3 {
+    font-size: 1.7rem;
+    color: #0369a1; /* Azul corporativo */
+    font-weight: 700;
+    margin-bottom: 0.3rem;
+}
+
+.nv-mv-header p {
+    color: #64748b;
+    font-size: 0.92rem;
+}
+
+.nv-mv-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.nv-mv-card {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 2.2rem 2rem;
+    box-shadow: 0 8px 24px rgba(14, 165, 233, 0.08);
+    border: 1.5px solid #e0f2fe;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    text-align: left;
+}
+
+.nv-mv-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(14, 165, 233, 0.15);
+}
+
+.nv-mv-icono {
+    font-size: 1.8rem;
+    margin-bottom: 0.8rem;
+}
+
+.nv-mv-card h4 {
+    margin: 0 0 0.6rem 0;
+    font-size: 1.25rem;
+    color: #0c4a6e;
+    font-weight: 700;
+}
+
+.nv-mv-card p {
+    margin: 0;
+    font-size: 0.88rem;
+    color: #475569;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+/* ===================================================
+   UBICACIÓN / CONTACTO (FONDO CELESTE MINIMALISTA)
+====================================================== */
+.nv-contacto-grid {
+    background: #f0f9ff !important; /* Celeste suave */
+    border: 1px solid #bae6fd !important;
+    box-shadow: 0 8px 26px rgba(56, 189, 248, 0.1) !important;
+}
+
+.nv-info-icono {
+    background: #e0f2fe !important; /* Fondo icono celeste claro */
+    color: #0284c7;
+}
+
+@media (max-width: 800px) {
+    .nv-mv-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* RESETEO TOTAL: CERO VERDE, HOVER NARANJA */
+.nv-nodulo-doc, 
+.nv-tarjeta-doc {
+    background: #ffffff !important;
+    border-radius: 20px !important;
+    box-shadow: 0 8px 24px rgba(128, 161, 212, 0.15) !important;
+}
+
+/* Badge arriba */
+.nv-badge-modalidad,
+.nv-badge-pill {
+    background-color: #f0f7ff !important;
+    color: #80a1d4 !important;
+    border: 1px solid #80a1d4 !important;
+    font-size: 0.7rem !important;
+    font-weight: 700 !important;
+    padding: 3px 8px !important;
+    border-radius: 6px !important;
+}
+
+/* Botón Agendar Cita */
+.nv-nodulo-doc a,
+.nv-tarjeta-doc a,
+.nv-btn-agendar-card,
+.nv-btn-agendar-nodulo {
+    background-color: #ffffff !important;
+    border: 1.5px solid #80a1d4 !important;
+    color: #80a1d4 !important;
+    border-radius: 10px !important;
+    padding: 7px 16px !important;
+    font-weight: 700 !important;
+    font-size: 0.82rem !important;
+    text-decoration: none !important;
+    display: inline-block !important;
+    transition: all 0.2s ease !important;
+}
+
+/* Hover al tocar: Naranja puro */
+.nv-nodulo-doc a:hover,
+.nv-tarjeta-doc a:hover,
+.nv-btn-agendar-card:hover,
+.nv-btn-agendar-nodulo:hover {
+    background-color: #e76f51 !important;
+    border-color: #e76f51 !important;
+    color: #ffffff !important;
+    box-shadow: 0 4px 12px rgba(231, 111, 81, 0.3) !important;
 }
