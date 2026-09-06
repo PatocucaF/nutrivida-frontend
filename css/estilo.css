@@ -516,3 +516,82 @@ button:focus {
 
 .info-list { list-style: none; padding: 0; margin-top: 15px; }
 .info-list li { margin-bottom: 12px; font-size: 0.95rem; }
+
+
+
+/* Estilos base del Header y Menú de hamburugesa*/
+header {
+    position: relative !important;
+    background-color: #2e7d32 !important;
+    width: 100% !important;
+}
+
+.header-container {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    padding: 1rem 1.5rem !important;
+}
+
+.logo {
+    color: white !important;
+    margin: 0 !important;
+    font-size: 1.5rem !important;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.menu-btn {
+    position: absolute !important;
+    right: 1.5rem !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    background: transparent !important;
+    border: none !important;
+    font-size: 1.8rem !important;
+    color: white !important;
+    cursor: pointer !important;
+    padding: 0 !important;
+    line-height: 1 !important;
+    z-index: 1001 !important;
+}
+
+.menu-btn span:not(.hidden) {
+    display: inline-block !important;
+}
+
+#mobile-menu.hidden {
+    display: none !important;
+}
+
+#mobile-menu {
+    display: flex !important;
+    flex-direction: column !important;
+    position: absolute !important;
+    top: 100% !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    background-color: #25632a !important;
+    padding: 1rem 1.5rem !important;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3) !important;
+    z-index: 1000 !important;
+}
+
+.nav-links {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0.8rem !important;
+}
+
+#mobile-menu a {
+    color: white !important;
+    text-decoration: none !important;
+    font-size: 1.1rem !important;
+}
+
+#mobile-menu a:hover {
+    text-decoration: underline !important;
+}

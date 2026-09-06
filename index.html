@@ -1,17 +1,3 @@
-
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>nutrivida-frontend</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
-</html>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -32,25 +18,23 @@
 <body>
 
     <header>
-        <div class="header-top">
-            <h1>Clínica NutriVida</h1>  
-        </div>   
-        
-        <nav class="header-nav">
-            <button id="menu-btn" class="menu-btn" aria-label="Abrir-menu">
+        <div class="header-container">
+            <h1 class="logo">Clínica NutriVida</h1>
+
+            <button id="menu-btn" class="menu-btn" aria-label="Abrir menú">
                 <span id="icon-hamburger">☰</span>
                 <span id="icon-close" class="hidden">✕</span>
             </button>
+        </div>
 
-            <div id="mobile-menu" class="nav-content hidden">
-                <div class="nav-links">
-                    <a href="index.html" class="mobile-link">Inicio</a>
-                    <a href="citas.html" class="mobile-link">Agendar Cita</a>
-                    <a href="ficha.html" class="mobile-link">Mi Ficha</a>
-                    <a href="admin.html" class="mobile-link">Administración</a>
-                </div>
+        <div id="mobile-menu" class="nav-content hidden">
+            <div class="nav-links">
+                <a href="index.html" class="mobile-link">Inicio</a>
+                <a href="citas.html" class="mobile-link">Agendar Cita</a>
+                <a href="ficha.html" class="mobile-link">Mi Ficha</a>
+                <a href="admin.html" class="mobile-link">Administración</a>
             </div>
-        </nav>
+        </div>
     </header>
         
 
@@ -194,7 +178,6 @@
 
     
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-    <script src="js/carrusel.js"></script>
     <script src="js/mapa.js"></script>
     <script src="js/carrusel.js"></script>
     <script src="js/main.js"></script>
