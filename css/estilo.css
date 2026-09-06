@@ -740,20 +740,20 @@ header {
 }
 
 /* ===================================================
-   1. MÓDULO DE SERVICIOS Y ACCESO RÁPIDO
+   SERVICIOS: PASTILLAS CON INFORMACIÓN + FICHA CENTRADA
 ====================================================== */
 .nv-servicios-seccion {
-    padding: 2.5rem 1.5rem;
+    padding: 2.5rem 1rem;
     display: flex;
     justify-content: center;
 }
 
 .nv-servicios-contenedor {
     width: 100%;
-    max-width: 520px;
+    max-width: 900px; /* Más ancho para que quepa bien el texto de las 4 áreas */
     display: flex;
     flex-direction: column;
-    gap: 1.2rem;
+    gap: 1.5rem;
 }
 
 .nv-servicios-titulo {
@@ -768,50 +768,64 @@ header {
 .nv-grilla-servicios {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 14px;
+    gap: 16px;
 }
 
-/* Cápsula de servicio individual */
+/* Pastilla individual con descripción */
 .nv-capsula-servicio {
     background: #ffffff;
     border-radius: 18px;
-    padding: 14px 16px;
+    padding: 1.2rem 1.4rem;
     display: flex;
-    align-items: center;
-    gap: 12px;
+    flex-direction: column;
+    align-items: flex-start;
     box-shadow: 0 8px 24px rgba(128, 161, 212, 0.12);
     border: 1.5px solid transparent;
-    cursor: pointer;
     transition: all 0.25s ease;
+    box-sizing: border-box;
 }
 
 .nv-capsula-servicio:hover {
     border-color: #e76f51;
     transform: translateY(-3px);
-    box-shadow: 0 10px 26px rgba(231, 111, 81, 0.22);
-}
-
-.nv-capsula-icono {
-    font-size: 1.35rem;
+    box-shadow: 0 10px 26px rgba(231, 111, 81, 0.2);
 }
 
 .nv-capsula-nombre {
-    font-size: 0.95rem;
+    font-size: 1.05rem;
     font-weight: 700;
     color: #80a1d4;
+    margin: 0 0 6px 0;
 }
 
-/* Franja horizontal 'Mi Ficha' */
+.nv-capsula-desc {
+    font-size: 0.83rem;
+    color: #64748b;
+    line-height: 1.45;
+    margin: 0;
+    text-align: left;
+}
+
+/* Envoltura para centrar Mi Ficha */
+.nv-franja-ficha-wrap {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 0.5rem;
+}
+
 .nv-franja-ficha {
+    width: 100%;
+    max-width: 580px; /* Ancho acotado para lucir centrada */
     background: #ffffff;
     border-radius: 18px;
-    padding: 1.2rem 1.4rem;
+    padding: 1.1rem 1.4rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
     box-shadow: 0 8px 24px rgba(128, 161, 212, 0.12);
-    border: none;
     gap: 1rem;
+    box-sizing: border-box;
 }
 
 .nv-franja-texto {
@@ -819,8 +833,8 @@ header {
 }
 
 .nv-franja-texto h4 {
-    margin: 0 0 4px 0;
-    font-size: 0.98rem;
+    margin: 0 0 3px 0;
+    font-size: 0.95rem;
     color: #80a1d4;
     font-weight: 700;
 }
@@ -831,14 +845,13 @@ header {
     color: #64748b;
 }
 
-/* Botón 'Mi Ficha' */
 .nv-btn-franja-ficha {
     background: #ffffff;
     border: 1.5px solid #80a1d4;
     color: #80a1d4;
     padding: 8px 18px;
     border-radius: 10px;
-    font-size: 0.85rem;
+    font-size: 0.84rem;
     font-weight: 700;
     text-decoration: none;
     white-space: nowrap;
@@ -850,11 +863,22 @@ header {
     background: #e76f51;
     border-color: #e76f51;
     color: #ffffff;
-    transform: translateX(3px);
-    box-shadow: 0 4px 14px rgba(231, 111, 81, 0.3);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(231, 111, 81, 0.3);
 }
 
-//* ===================================================
+/* Responsive para celulares */
+@media (max-width: 768px) {
+    .nv-grilla-servicios {
+        grid-template-columns: 1fr;
+    }
+    
+    .nv-franja-ficha {
+        max-width: 100%;
+    }
+}
+
+/* ===================================================
    EQUIPO MÉDICO DEFINITIVO (NÓDULOS HORIZONTALES)
 ====================================================== */
 .nv-equipo-seccion {
@@ -1588,3 +1612,4 @@ body {
     color: #ffffff !important;
     box-shadow: 0 4px 12px rgba(231, 111, 81, 0.3) !important;
 }
+
