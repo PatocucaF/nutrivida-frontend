@@ -734,3 +734,140 @@ header {
 #mobile-menu a:hover {
     text-decoration: underline !important;
 }
+
+/* SERVICIOS, MI FICHA Y DUDAS */
+.nv-servicios-seccion {
+    max-width: 1100px;
+    margin: 2.5rem auto;
+    padding: 0 1.5rem;
+}
+
+/* Fila dividida servicios (izq), ficha (der) */
+.nv-servicios-grid {
+    display: grid;
+    grid-template-columns: 2fr 1.2fr;
+    gap: 2rem;
+    align-items: stretch;
+}
+
+/* Columna Servicios */
+.nv-col-servicios h3 {
+    font-size: 1.5rem;
+    color: #1b5e20;
+    margin-bottom: 1.2rem;
+}
+
+.nv-botones-servicios {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+.nv-btn-servicio {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+    border: 2px solid #2e7d32;
+    border-radius: 8px;
+    color: #2e7d32;
+    font-weight: 700;
+    text-decoration: none;
+    background: #ffffff;
+    transition: all 0.2s ease;
+}
+
+.nv-btn-servicio:hover {
+    background-color: #2e7d32;
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+/* Si ya perteneces */
+.nv-card-familia {
+    background: #f4fbf4;
+    border: 2px solid #c8e6c9;
+    border-radius: 12px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.nv-card-familia h4 {
+    color: #1b5e20;
+    margin: 0 0 0.5rem 0;
+    font-size: 1.15rem;
+}
+
+.nv-card-familia p {
+    color: #475569;
+    font-size: 0.95rem;
+    margin: 0 0 1rem 0;
+}
+
+.nv-btn-ficha {
+    display: inline-block;
+    background-color: #ffffff;
+    color: #1b5e20;
+    border: 1.5px solid #1b5e20;
+    padding: 8px 22px;
+    border-radius: 6px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.nv-btn-ficha:hover {
+    background-color: #1b5e20;
+    color: #ffffff;
+}
+
+/* Banner inferior de dudas */
+.nv-banner-dudas {
+    margin-top: 1.8rem;
+    background-color: #ffffff;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 1rem 1.8rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.nv-banner-dudas p {
+    margin: 0;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #1e293b;
+}
+
+.nv-btn-dudas {
+    background-color: #f4a261;
+    color: #1e293b;
+    padding: 8px 18px;
+    border-radius: 6px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+}
+
+.nv-btn-dudas:hover {
+    background-color: #e76f51;
+    color: #ffffff;
+}
+
+/* Adaptabilidad para celular */
+@media (max-width: 768px) {
+    .nv-servicios-grid {
+        grid-template-columns: 1fr;
+    }
+    .nv-banner-dudas {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+    }
+}
