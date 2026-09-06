@@ -219,3 +219,164 @@ button:hover {
 .nv-link-ficha:hover {
     color: #e76f51;
 }
+
+/* --- CARRUSEL PRINCIPAL ---- */
+
+.nv-carousel-wrapper {
+    position: relative;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #1b5e20;
+}
+
+.carousel-container{
+    position: relative;
+    width: 100%;
+    min-height: 520px;
+    overflow: hidden;
+}
+
+/*Diapositivas*/
+.carousel-slide {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center 30%;
+    background-repeat: no-repeat;
+    box-sizing: border-box;
+    padding: 2rem;
+}
+
+.carousel-slide.active{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+@keyframes fadeInSlide {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/*Texto sobre la imagen*/
+.slide-content {
+    max-width: 850px;
+    text-align: center;
+    color: #ffffff;
+    z-index: 2;
+}
+
+.slide-content h2 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #ffffff;    
+    margin-bottom: 0.8rem;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.75);
+}
+
+.slide-content p {
+    font-size:  1.15rem;
+    color: #f1f5f9;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.75);
+}
+
+/*Boton Agendar*/
+.btn-hero {
+    display: inline-block;
+    background-color: #ffffff;
+    color: #1e293b;
+    padding: 12px 28px;
+    border-radius: 6px;
+    font-size: 1ren;
+    font-weight: 700;
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+    transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.btn-hero:hover {
+    background-color: #e76f51;
+    color: white;
+    transform: translateY(-2px);
+}
+
+/*Felchas del carrusel*/
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    color: white;
+    font-size: 3rem;
+    padding: 0px 10px;
+    border: none;
+    cursor: pointer;
+    z-index: 10;
+    line-height: 1;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+    transition: background 0.2s ease, opacity 0.2s ease;
+    user-select: none;
+}
+
+.carousel-btn:hover {
+    background: rgba(15, 23, 42, 0.85);
+}
+
+.prev-btn {left: 20px;}
+.next-btn {right: 20px;}
+
+.carousel-dots {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 5;
+}
+
+.dot {
+    width: 13px;
+    height: 13px;
+    background-color: rgba(255, 255, 255, 0.45);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.23s ease;
+}
+
+.dot.active {
+    background-color: #ffffff;
+    transform:  scale(1.25);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -41,46 +41,54 @@
         </nav>
     </header>
         
+        <!--1. CARRUSEL-->
+        <section class = "nv-carousel-wrapper">
+            <div class = "carousel-container">
+
+                <!-- slide 1--> 
+                <div class="carousel-slide active" style="background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url('img/IMG1.jpg');">                 
+                    <div class="slide-content">
+                        <h2>Nutrición con Base Científica en Temuco</h2>
+                        <p>Planes 100% personalizados para potenciar tu salud, rendimiento y bienestar.</p>
+                        <a href = "citas.html" class="btn-hero"> Agendar Consulta</a>
+                    </div>
+                </div>
+
+                <!-- slide 2-->
+                <div class = "carousel-slide" style="background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url('img/IMG2.jpg');">
+                    <div class = "slide-content">
+                        <h2> Especialistas en Salud Metabólica y Deporte</h2>
+                        <p> Acompañamiento clínico integral adaptado a tus objetivos reales.</p>
+                        <a href = "#servicios" class ="btn-hero"> Agendar Consulta</a>
+                    </div>
+                </div>
+
+                <!-- slide 3-->
+                <div class ="carousel-slide" style="background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url('img/IMG3.jpg');">
+                    <div class="slide-content">
+                        <h2> Salud infantil guiada por especialistas</h2>
+                        <p> Consulta unicamente presencial, con la mayor.</p>
+                        <a href="citas.html" class="btn-hero">Agendar Consulta</a>
+                    </div>
+                </div>
+
+                <!-- Botones y puntos -->
+                 <button id="prevBtn" class="carousel-btn prev-btn" aria-label="Anterior">&#10094;</button>
+                 <button id="nextBtn" class="carousel-btn next-btn" aria-label="Siguiente">&#10095;</button>
+
+                <div class ="carousel-dots">
+                    <span class = "dot active" data-slide="0"></span>
+                    <span class = "dot" data-slide="1"></span>
+                    <span class = "dot" data-slide="2"></span>
+            
+                </div>
+            </div>
+        </section>
+
+
+
 
     <main>
-        <section class="card-box">
-            <h2>Bienvenido a Clínica NutriVida</h2>
-            <p>Atención nutricional especializada e integral en Temuco.</p>
-        </section>
-
-        <!-- Catalogo basico de precios -->
-        <section class="card-box">
-            <h3>Catálogo de Servicios y Tarifa</h3>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Servicio</th>
-                        <th>Descripción</th>
-                        <th>Precio</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Consulta Nutricional Inicial</td>
-                        <td>Evaluación completa + antropometría</td>
-                        <td>$35.000</td>
-                    </tr>
-                    <tr>
-                        <td>Control Nutricional</td>
-                        <td>Seguimiento de pauta y avances</td>
-                        <td>$25.000</td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
-
-        
-        <section class="card-box">
-            <h3>Ubicación en Temuco</h3>
-            <div id="mapa-temuco" style="height: 300px; margin-top: 10px;"></div>
-        </section>
-    </main>
-
     <!-- Seccion: Equipo de Funcionarios -->
         <section class="card-box nv-team-section">
             <div class="nv-team-header">
@@ -92,7 +100,7 @@
                 <!-- 1. Valentina Silva -->
                 <article class="nv-member-card">
                     <div class="nv-member-img">
-                        <img src="assets/img/valentina-silva.jpg" alt="Valentina Silva">
+                        <img src="img/Valentina_Silva.jpg" alt="Valentina Silva">
                         <span class="nv-badge-pill">Presencial & Online</span>
                     </div>
                     <div class="nv-member-info">
@@ -109,7 +117,7 @@
                 <!-- 2. Constanza Díaz -->
                 <article class="nv-member-card">
                     <div class="nv-member-img">
-                        <img src="assets/img/constanza-diaz.jpg" alt="Constanza Díaz">
+                        <img src="img/Constanza_Diaz.jpg" alt="Constanza Díaz">
                         <span class="nv-badge-pill">Presencial & Online</span>
                     </div>
                     <div class="nv-member-info">
@@ -126,7 +134,7 @@
                 <!-- 3. Andrea Muñoz -->
                 <article class="nv-member-card">
                     <div class="nv-member-img">
-                        <img src="assets/img/andrea-munoz.jpg" alt="Andrea Muñoz">
+                        <img src="img/Andrea_Muñoz.jpg" alt="Andrea Muñoz">
                         <span class="nv-badge-pill">Atención Presencial</span>
                     </div>
                     <div class="nv-member-info">
@@ -143,7 +151,7 @@
                 <!-- 4. Kevin Carrasco -->
                 <article class="nv-member-card">
                     <div class="nv-member-img">
-                        <img src="assets/img/kevin-carrasco.jpg" alt="Kevin Carrasco">
+                        <img src="img/Kevin_Carrasco.jpg" alt="Kevin Carrasco">
                         <span class="nv-badge-pill">Presencial & Online</span>
                     </div>
                     <div class="nv-member-info">
@@ -160,7 +168,7 @@
                 <!-- 5. Marco Valencia -->
                 <article class="nv-member-card">
                     <div class="nv-member-img">
-                        <img src="assets/img/marco-valencia.jpg" alt="Marco Valencia">
+                        <img src="img/Marco_Valencia.jpg" alt="Marco Valencia">
                         <span class="nv-badge-pill">Atención Online</span>
                     </div>
                     <div class="nv-member-info">
@@ -175,7 +183,7 @@
                 </article>
             </div>
         </section>
-
+    <main>
     <footer>
         <p>&copy; 2026 Clínica NutriVida - Temuco, Región de La Araucanía</p>
     </footer>

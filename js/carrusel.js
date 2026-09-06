@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function prevSlide() { showSlide(currentIndex - 1); }
 
     function startAutoSlide() {
-        autoSlideInterval = setInterval(nextSlide, 5000); // Cambia cada 5 segundos
+        autoSlideInterval = setInterval(nextSlide, 8000); // Cambia cada 8 segundos
     }
 
     function resetTimer() {
