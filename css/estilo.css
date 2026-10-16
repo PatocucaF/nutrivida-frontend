@@ -1,0 +1,1615 @@
+/*Variable de paleta de colores*/
+:root {
+   --primary: #6a94d3;
+   --primary-hover: #75c9c8;
+   --secondary: #0288d1;
+   --bg-body: #f4f6f8;
+   --card-bg: #ffffff;
+   --text-main: #333333;
+   --text-muted: #666666;
+   --border: #e0e0e0;
+   --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+   --radius: 10px;
+}   
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--bg-body);
+    color: var(--text-main);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    line-height: 1.6;
+}
+
+header {
+    background: linear-gradient(135deg, var(--primary), var(--primary-hover));
+    color: white;
+    padding: 1.2rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}   
+
+header h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+nav {
+    display: flex;
+    gap: 15px;
+}
+
+nav a {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+nav a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+}
+
+main {
+    flex: 1;
+    max-width: 1100px;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.card-box {
+    background: var(--card-bg);
+    padding: 1.8rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    border: 1px solid rgba(0,0,0,0.03);
+}
+
+.card-box h2, .card-box h3 {
+    color: var(--primary);
+    margin-bottom: 0.8rem;
+    border-bottom: 2px solid #eef2f5;
+    padding-bottom: 0.4rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-muted);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="date"],
+input[type="number"],
+select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input:focus, select:focus {
+    border-color: var(--secondary);
+    box-shadow: 0 0 0 3px rgba(2, 136, 209, 0.15);
+}
+
+button {
+    background-color: var(--primary);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+button:hover {
+    background-color: var(--primary-hover);
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+/* Botones de accion dinamicos en tablas */
+
+.input-aditar-rol {
+    width: 130px;
+    padding: 0.35rem 0.5rem;
+    border:  1px solid var(--secondary);
+    border-radius:4px;
+    font-size: 0.85rem;
+    outline: none;
+}
+
+.btn-cambiar-rol {
+    background-color: var(--secondary);
+    padding: 0.4rem 0.8rem;
+    font-size: 0.85rem;
+}
+
+.btn-cambiar-rol:hover {
+    background-color: #0277bd;
+}
+
+.btn-guardar-rol {
+    background-color: #6a94d3;
+    padding: 0.4rem 0.8rem;
+    font-size: 0.85rem;
+}
+
+.btn-guardar-rol:hover {
+    background-color: #6a94d3;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+}
+
+th {
+    background-color: #f8f9fa;
+    color: var(--text-muted);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 0.5px;
+}
+
+tr:hover {
+    background-color: #f1f5f9;
+}
+
+.badge {
+    background-color: #e3f2fd;
+    color: var(--secondary);
+    padding: 0.3rem 0.7rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    display: inline-block;
+}
+
+/* Estados visuales para Ficha Clinica */
+.status-normal {
+    background-color: #e8f5e9;
+    color: #6a94d3;
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+.status-warning {
+    background-color: #fff3e0;
+    color: #e76f51;
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+footer {
+    background-color: var(--primary-hover);
+    color: white;
+    text-align: center;
+    padding: 1.2rem;
+    margin-top: auto;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    main {
+        padding: 0 1rem;
+    }
+
+    table, th, td {
+        font-size: 0.9rem;
+        padding: 0.6rem;
+    }
+}
+
+
+/* Transiciones y microinteracciones */
+.card-box {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card-box:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+tr {
+    transition: background-color 0.15s ease;
+}
+
+/* Accesibilidad y foco visual */
+nav a:focus,
+button:focus {
+    outline: 2px solid #ffffff;
+    outline-offset: 2px;
+}
+
+/* ====================
+   CARRUSEL & INTERFAZ 
+   ==================== */
+
+.main-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Carrusel Contenedor */
+.carousel-container {
+    position: relative;
+    width: 100%;
+    height: 420px;
+    overflow: hidden;
+    border-radius: 0 0 20px 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
+.carousel-track {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+/* Slides */
+.carousel-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.carousel-slide.active {
+    opacity: 1;
+    z-index: 1;
+}
+
+.hero-content {
+    max-width: 750px;
+}
+
+.badge-hero {
+    background-color: rgba(255, 255, 255, 0.25);
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.hero-content h2 {
+    font-size: 2.2rem;
+    margin: 15px 0;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.hero-content p {
+    font-size: 1.1rem;
+    opacity: 0.95;
+    margin-bottom: 25px;
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.btn-primary {
+    background-color: #6a94d3;
+    color: #003300;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #6a94d3;
+}
+
+.btn-secondary {
+    border: 2px solid white;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.25);
+}
+
+/* Botones Flecha */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent !important; /* Quita el fondo negro */
+    color: #ffffff !important;           /* Flecha blanca pura */
+    border: none !important;
+    font-size: 2.5rem;                   /* Tamaño visible para la flecha suelta */
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 0 !important;         /* Borra el círculo */
+    box-shadow: none !important;
+    z-index: 10;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+/* Al pasar el mouse encima: cambia a naranjo y crece un poquito */
+.carousel-btn:hover {
+    background: transparent !important;
+    color: #e76f51 !important;           /* Naranjo */
+    transform: translateY(-50%) scale(1.2);
+}
+
+.prev-btn { left: 20px; }
+.next-btn { right: 20px; }
+
+/* Puntos Indicadores */
+.carousel-indicators {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 10;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.dot.active {
+    background: #6a94d3;
+    width: 28px;
+    border-radius: 10px;
+}
+
+/* Tarjetas de Acceso Rápido */
+.quick-access {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: -40px;
+    position: relative;
+    z-index: 10;
+    margin-bottom: 40px;
+}
+
+.access-card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    text-decoration: none;
+    color: #333;
+    border: 1px solid #e0e0e0;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.access-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    border-color: #6a94d3;
+}
+
+.access-card .icon { font-size: 2rem; margin-bottom: 10px; }
+.access-card h3 { color: #75c9c8; margin-bottom: 8px; }
+
+/* Servicios y Ubicación */
+.bupa-section { margin: 40px 0; }
+.section-title h2 { color: #6a94d3; font-size: 1.8rem; }
+.section-title hr { width: 60px; height: 3px; background-color: #6a94d3; border: none; margin: 8px 0 25px 0; }
+
+.grid-servicios {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.card-servicio {
+    background: white;
+    border-radius: 12px;
+    padding: 25px;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.card-tag {
+    display: inline-block;
+    background: #e8f5e9;
+    color: #6a94d3;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+.card-servicio .price { font-size: 1.5rem; font-weight: bold; color: #6a94d3; margin: 15px 0; }
+.btn-link { color: #0d47a1; text-decoration: none; font-weight: bold; }
+
+.location-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    background: #f9fbe7;
+    padding: 30px;
+    border-radius: 16px;
+    align-items: center;
+}
+
+/* --- CARRUSEL PRINCIPAL ---- */
+
+.nv-carousel-wrapper {
+    position: relative;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #75c9c8;
+}
+
+.carousel-container{
+    position: relative;
+    width: 100%;
+    min-height: 520px;
+    overflow: hidden;
+}
+
+/*Diapositivas*/
+.carousel-slide {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center 30%;
+    background-repeat: no-repeat;
+    box-sizing: border-box;
+    padding: 2rem;
+}
+
+.carousel-slide.active{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+@keyframes fadeInSlide {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/*Texto sobre la imagen*/
+.slide-content {
+    max-width: 850px;
+    text-align: center;
+    color: #ffffff;
+    z-index: 2;
+}
+
+.slide-content h2 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #ffffff;    
+    margin-bottom: 0.8rem;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.75);
+}
+
+.slide-content p {
+    font-size:  1.15rem;
+    color: #f1f5f9;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.75);
+}
+
+/*Boton Agendar*/
+.btn-hero {
+    display: inline-block;
+    background-color: #ffffff;
+    color: #1e293b;
+    padding: 12px 28px;
+    border-radius: 6px;
+    font-size: 1ren;
+    font-weight: 700;
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+    transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.btn-hero:hover {
+    background-color: #e76f51;
+    color: white;
+    transform: translateY(-2px);
+}
+
+/*Felchas del carrusel*/
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    color: white;
+    font-size: 3rem;
+    padding: 0px 10px;
+    border: none;
+    cursor: pointer;
+    z-index: 10;
+    line-height: 1;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+    transition: background 0.2s ease, opacity 0.2s ease;
+    user-select: none;
+}
+
+.carousel-btn:hover {
+    background: rgba(15, 23, 42, 0.85);
+}
+
+.prev-btn {left: 20px;}
+.next-btn {right: 20px;}
+
+.carousel-dots {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 5;
+}
+
+.dot {
+    width: 13px;
+    height: 13px;
+    background-color: rgba(255, 255, 255, 0.45);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.23s ease;
+}
+
+.dot.active {
+    background-color: #ffffff;
+    transform:  scale(1.25);
+}
+
+
+.info-list { list-style: none; padding: 0; margin-top: 15px; }
+.info-list li { margin-bottom: 12px; font-size: 0.95rem; }
+
+
+
+/* Estilos base del Header y Menú de hamburugesa*/
+header {
+    position: relative !important;
+    background-color: #6a94d3 !important;
+    width: 100% !important;
+}
+
+.header-container {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    padding: 1rem 1.5rem !important;
+}
+
+.logo {
+    color: white !important;
+    margin: 0 !important;
+    font-size: 1.5rem !important;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.menu-btn {
+    position: absolute !important;
+    right: 1.5rem !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    background: transparent !important;
+    border: none !important;
+    font-size: 1.8rem !important;
+    color: white !important;
+    cursor: pointer !important;
+    padding: 0 !important;
+    line-height: 1 !important;
+    z-index: 1001 !important;
+}
+
+.menu-btn span:not(.hidden) {
+    display: inline-block !important;
+}
+
+#mobile-menu.hidden {
+    display: none !important;
+}
+
+#mobile-menu {
+    display: flex !important;
+    flex-direction: column !important;
+    position: absolute !important;
+    top: 100% !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    background-color: #6a94d3 !important;
+    padding: 1rem 1.5rem !important;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3) !important;
+    z-index: 1000 !important;
+}
+
+.nav-links {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0.8rem !important;
+}
+
+#mobile-menu a {
+    color: white !important;
+    text-decoration: none !important;
+    font-size: 1.1rem !important;
+}
+
+#mobile-menu a:hover {
+    text-decoration: underline !important;
+}
+
+/* ===================================================
+   SERVICIOS: PASTILLAS CON INFORMACIÓN + FICHA CENTRADA
+====================================================== */
+.nv-servicios-seccion {
+    padding: 2.5rem 1rem;
+    display: flex;
+    justify-content: center;
+}
+
+.nv-servicios-contenedor {
+    width: 100%;
+    max-width: 900px; /* Más ancho para que quepa bien el texto de las 4 áreas */
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.nv-servicios-titulo {
+    color: #80a1d4;
+    font-size: 1.45rem;
+    font-weight: 700;
+    text-align: left;
+    margin: 0;
+}
+
+/* Grilla 2x2 */
+.nv-grilla-servicios {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+
+/* Pastilla individual con descripción */
+.nv-capsula-servicio {
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 1.2rem 1.4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    box-shadow: 0 8px 24px rgba(128, 161, 212, 0.12);
+    border: 1.5px solid transparent;
+    transition: all 0.25s ease;
+    box-sizing: border-box;
+}
+
+.nv-capsula-servicio:hover {
+    border-color: #e76f51;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 26px rgba(231, 111, 81, 0.2);
+}
+
+.nv-capsula-nombre {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #80a1d4;
+    margin: 0 0 6px 0;
+}
+
+.nv-capsula-desc {
+    font-size: 0.83rem;
+    color: #64748b;
+    line-height: 1.45;
+    margin: 0;
+    text-align: left;
+}
+
+/* Envoltura para centrar Mi Ficha */
+.nv-franja-ficha-wrap {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 0.5rem;
+}
+
+.nv-franja-ficha {
+    width: 100%;
+    max-width: 580px; /* Ancho acotado para lucir centrada */
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 1.1rem 1.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 8px 24px rgba(128, 161, 212, 0.12);
+    gap: 1rem;
+    box-sizing: border-box;
+}
+
+.nv-franja-texto {
+    text-align: left;
+}
+
+.nv-franja-texto h4 {
+    margin: 0 0 3px 0;
+    font-size: 0.95rem;
+    color: #80a1d4;
+    font-weight: 700;
+}
+
+.nv-franja-texto p {
+    margin: 0;
+    font-size: 0.8rem;
+    color: #64748b;
+}
+
+.nv-btn-franja-ficha {
+    background: #ffffff;
+    border: 1.5px solid #80a1d4;
+    color: #80a1d4;
+    padding: 8px 18px;
+    border-radius: 10px;
+    font-size: 0.84rem;
+    font-weight: 700;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.nv-btn-franja-ficha:hover {
+    background: #e76f51;
+    border-color: #e76f51;
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(231, 111, 81, 0.3);
+}
+
+/* Responsive para celulares */
+@media (max-width: 768px) {
+    .nv-grilla-servicios {
+        grid-template-columns: 1fr;
+    }
+    
+    .nv-franja-ficha {
+        max-width: 100%;
+    }
+}
+
+/* ===================================================
+   EQUIPO MÉDICO DEFINITIVO (NÓDULOS HORIZONTALES)
+====================================================== */
+.nv-equipo-seccion {
+    width: 95%;
+    max-width: 1200px;
+    margin: 4.5rem auto;
+    padding: 0 1.5rem;
+    box-sizing: border-box;
+}
+
+.nv-equipo-header {
+    text-align: center;
+    margin-bottom: 2.8rem;
+}
+
+.nv-equipo-header h3 {
+    font-size: 1.8rem;
+    color: #75c9c8;
+    margin: 0 0 0.4rem 0;
+    font-weight: 700;
+}
+
+.nv-equipo-header p {
+    color: #64748b;
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+.nv-equipo-grid-nodulos {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.8rem;
+}
+
+.nv-nodulo-doc {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 18px;
+    gap: 18px;
+    box-shadow: 0 10px 25px rgba(128, 161, 212, 0.15);
+    border: none;
+    min-height: 190px;
+    box-sizing: border-box;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.nv-nodulo-doc:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 30px rgba(128, 161, 212, 0.22);
+}
+
+.nv-nodulo-foto {
+    width: 140px;
+    min-width: 140px;
+    max-width: 140px;
+    height: auto;
+    border-radius: 14px;
+    overflow: hidden;
+    margin: 0;
+    background: #f1f5f9;
+}
+
+.nv-nodulo-foto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.nv-nodulo-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: left;
+}
+
+.nv-nodulo-top {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    margin-bottom: 8px;
+}
+
+.nv-badge-modalidad {
+    background-color: #e8f5e9;
+    color: #80a1d4;
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 6px;
+    text-transform: uppercase;
+    margin: 0;
+    display: inline-block;
+}
+
+.nv-nodulo-top h4 {
+    margin: 0;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #1e293b;
+}
+
+.nv-nodulo-top h4 span {
+    color: #80a1d4;
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.nv-nodulo-desc {
+    font-size: 0.85rem;
+    color: #475569;
+    line-height: 1.45;
+    margin: 0 0 12px 0;
+    text-align: left;
+}
+
+.nv-nodulo-footer {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    margin-top: auto;
+}
+
+.nv-btn-agendar-card {
+    background-color: #ffffff;
+    border: 1.5px solid #75c9c8;
+    color: #75c9c8;
+    padding: 7px 16px;
+    border-radius: 10px;
+    font-size: 0.82rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    display: inline-block;
+}
+
+.nv-btn-agendar-card:hover {
+    background-color: #e76f51;
+    border-color: #e76f51;
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(231, 111, 81, 0.25);
+}
+
+@media (max-width: 900px) {
+    .nv-equipo-grid-nodulos {
+        grid-template-columns: 1fr;
+    }
+}
+/* CONTACTO, UBICACIÓN Y MAPA */
+.nv-contacto-seccion {
+    max-width: 1150px;
+    margin: 4rem auto;
+    padding: 0 1.5rem;
+}
+
+.nv-contacto-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 1.4fr; 
+    gap: 2.5rem;
+    align-items: center;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+    padding: 2.5rem;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+}
+
+/* Columna Información */
+.nv-contacto-info h3 {
+    font-size: 1.8rem;
+    color: #75c9c8;
+    margin: 0 0 0.5rem 0;
+    font-weight: 700;
+}
+
+.nv-contacto-bajada {
+    color: #64748b;
+    font-size: 0.92rem;
+    margin: 0 0 1.8rem 0;
+    line-height: 1.4;
+}
+
+.nv-info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    margin-bottom: 1.2rem;
+}
+
+.nv-info-icono {
+    font-size: 1.4rem;
+    background: #e8f5e9;
+    padding: 8px;
+    border-radius: 8px;
+    line-height: 1;
+}
+
+.nv-info-item h5 {
+    margin: 0 0 3px 0;
+    font-size: 1rem;
+    color: #1e293b;
+    font-weight: 700;
+}
+
+.nv-info-item p {
+    margin: 0;
+    font-size: 0.88rem;
+    color: #475569;
+    line-height: 1.35;
+}
+
+.nv-contacto-acciones {
+    margin-top: 1.5rem;
+}
+
+.nv-btn-wsp {
+    display: inline-block;
+    background-color: #6a94d3;
+    color: #ffffff !important;
+    font-weight: 700;
+    font-size: 0.85rem;
+    padding: 10px 18px;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.nv-btn-wsp:hover {
+    background-color: #6a94d3;
+    transform: translateY(-2px);
+}
+
+/* Columna Mapa */
+.nv-mapa-columna {
+    display: flex;
+    flex-direction: column;
+}
+
+.nv-mapa-contenedor {
+    width: 100%;
+    height: 340px; 
+    border-radius: 10px;
+    overflow: hidden;
+    border: 2px solid #c8e6c9;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+#mapa-temuco {
+    width: 100%;
+    height: 100%;
+}
+
+.nv-mapa-pie {
+    margin-top: 8px;
+    font-size: 0.78rem;
+    color: #64748b;
+    text-align: right;
+    font-style: italic;
+}
+
+/* Adaptabilidad a pantallas pequeñas */
+@media (max-width: 850px) {
+    .nv-contacto-grid {
+        grid-template-columns: 1fr;
+        padding: 1.5rem;
+        gap: 2rem;
+    }
+
+    .nv-mapa-contenedor {
+        height: 280px;
+    }
+
+    .nv-mapa-pie {
+        text-align: center;
+    }
+}
+/* Botón agendar dentro de cada tarjeta */
+.nv-btn-agendar-card {
+    display: inline-block;
+    margin-top: 0.8rem;
+    padding: 8px 14px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: #75c9c8;
+    background-color: #f1f8e9;
+    border: 1px solid #c8e6c9;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.nv-btn-agendar-card:hover {
+    background-color: #75c9c8;
+    color: #ffffff;
+    border-color: #75c9c8;
+    transform: translateY(-2px);
+}
+
+/* ===================================================
+   BLOQUE 4: NÓDULOS DE EQUIPO MÉDICO (BOCETO)
+====================================================== */
+.nv-equipo-seccion {
+    max-width: 1200px;
+    margin: 4rem auto;
+    padding: 0 1.5rem;
+}
+
+.nv-equipo-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.nv-equipo-header h3 {
+    font-size: 1.8rem;
+    color: #75c9c8;
+    margin: 0 0 0.5rem 0;
+    font-weight: 700;
+}
+
+.nv-equipo-header p {
+    color: #64748b;
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+/* Grilla de 2 columnas como tu dibujo */
+.nv-equipo-grid-nodulos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.8rem;
+}
+
+/* Nódulo blanco redondeado y flotante */
+.nv-nodulo-doc {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 1.4rem;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    border: 1.5px solid transparent;
+}
+
+.nv-nodulo-doc:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Colores de bordes sutiles según tu paleta */
+.nv-nodulo-doc.card-verde {
+    border-color: #c8e6c9;
+}
+
+.nv-nodulo-doc.card-celeste {
+    border-color: #b2ebf2;
+}
+
+/* Contenedor de la Foto */
+.nv-nodulo-foto {
+    width: 105px;
+    height: 105px;
+    flex-shrink: 0;
+    border-radius: 14px;
+    overflow: hidden;
+    background-color: #f1f5f9;
+}
+
+.nv-nodulo-foto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Cuerpo de la información */
+.nv-nodulo-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    text-align: left;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.nv-nodulo-desc {
+    margin: 0 0 10px 0;
+    font-size: 0.84rem;
+    color: #64748b;
+    line-height: 1.35;
+    text-align: left !important;      
+}
+
+.nv-nodulo-top {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 6px;
+    width: 100%;
+}
+
+.nv-nodulo-footer {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+.nv-badge-pill {
+    background: #e8f5e9;
+    color: #6a94d3;
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 20px;
+    text-transform: uppercase;
+}
+
+.nv-nodulo-top h4 {
+    margin: 0;
+    font-size: 1.05rem;
+    color: #1e293b;
+    font-weight: 700;
+}
+
+.nv-nodulo-top h4 span {
+    color: #75c9c8;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.nv-nodulo-desc {
+    margin: 0 0 10px 0;
+    font-size: 0.84rem;
+    color: #64748b;
+    line-height: 1.35;
+}
+
+/* Botón alineado a la derecha */
+.nv-nodulo-footer {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.nv-btn-agendar-nodulo {
+    padding: 6px 14px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #ffffff;
+    background-color: #75c9c8;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.nv-btn-agendar-nodulo:hover {
+    background-color: #6a94d3;
+    transform: translateY(-1px);
+}
+
+/* Responsive para celular */
+@media (max-width: 900px) {
+    .nv-equipo-grid-nodulos {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .nv-nodulo-doc {
+        flex-direction: column;
+        text-align: center;
+    }
+    .nv-nodulo-top {
+        justify-content: center;
+    }
+    .nv-nodulo-footer {
+        justify-content: center;
+    }
+}
+
+/* ===================================================
+   AURAS DECORATIVAS DE FONDO (AZUL Y CELESTE)
+====================================================== */
+body {
+    position: relative;
+    overflow-x: hidden;
+    background-color: #f7fafc;
+}
+
+.nv-aura {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(85px);
+    pointer-events: none;
+    z-index: -1;
+    opacity: 0.35;
+}
+
+.nv-aura-1 {
+    width: 420px;
+    height: 420px;
+    background: #0284c7; /* Azul */
+    top: 600px;
+    left: -100px;
+}
+
+.nv-aura-2 {
+    width: 500px;
+    height: 500px;
+    background: #38bdf8; /* Celeste brillante */
+    top: 1100px;
+    right: -120px;
+}
+
+.nv-aura-3 {
+    width: 450px;
+    height: 450px;
+    background: #0ea5e9;
+    top: 1700px;
+    left: -60px;
+}
+
+.nv-aura-4 {
+    width: 520px;
+    height: 520px;
+    background: #7dd3fc;
+    top: 2300px;
+    right: -100px;
+}
+
+/* ===================================================
+   FLECHAS DEL CARRUSEL (BLANCA -> NARANJA SIN CÍRCULO)
+====================================================== */
+/* 1. Limpiar el botón principal y quitar cualquier fondo o marco */
+.carousel-control-prev,
+.carousel-control-next,
+.carousel-control-prev *,
+.carousel-control-next * {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    outline: none !important;
+}
+
+/* 2. Tamaño y posición */
+.carousel-control-prev,
+.carousel-control-next {
+    width: 60px !important;
+    opacity: 0.9 !important;
+    transition: opacity 0.2s ease;
+}
+
+/* 3. Flecha en blanco puro por defecto */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    width: 45px !important;
+    height: 45px !important;
+    filter: brightness(0) invert(1) !important; /* Fuerza el ícono SVG de Bootstrap a blanco puro */
+    transition: filter 0.25s ease, transform 0.25s ease;
+}
+
+/* 4. Al pasar el cursor: cambia a Naranjo y da un micro-salto */
+.carousel-control-prev:hover .carousel-control-prev-icon,
+.carousel-control-next:hover .carousel-control-next-icon {
+    /* Filtro CSS exacto para convertir cualquier SVG blanco a Naranja (#f97316) */
+    filter: invert(53%) sepia(89%) saturate(2250%) hue-rotate(352deg) brightness(101%) contrast(97%) !important;
+    transform: scale(1.18);
+}
+
+
+/* ===================================================
+   TARJETAS DOCTORES (FONDO BLANCO PURO, SOMBRA + TEXTO JUSTIFICADO)
+====================================================== */
+.nv-nodulo-doc,
+.nv-tarjeta-doc {
+    background: #ffffff !important; /* Blanco puro, no crema */
+    box-shadow: 0 10px 28px rgba(15, 23, 42, 0.08) !important; /* Sombra más notoria */
+    border: 1px solid #e2e8f0;
+}
+
+.nv-nodulo-desc,
+.nv-member-desc {
+    text-align: justify !important; /* Texto justificado como pediste */
+    color: #475569;
+    font-size: 0.85rem;
+    line-height: 1.45;
+}
+
+/* ===================================================
+   SECCIÓN MISIÓN Y VISIÓN (ENTRE DOCTORES Y UBICACIÓN)
+====================================================== */
+.nv-mision-vision-seccion {
+    max-width: 1100px;
+    margin: 4.5rem auto;
+    padding: 0 1.5rem;
+}
+
+.nv-mv-header {
+    text-align: center;
+    margin-bottom: 2.2rem;
+}
+
+.nv-mv-header h3 {
+    font-size: 1.7rem;
+    color: #0369a1; /* Azul corporativo */
+    font-weight: 700;
+    margin-bottom: 0.3rem;
+}
+
+.nv-mv-header p {
+    color: #64748b;
+    font-size: 0.92rem;
+}
+
+.nv-mv-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.nv-mv-card {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 2.2rem 2rem;
+    box-shadow: 0 8px 24px rgba(14, 165, 233, 0.08);
+    border: 1.5px solid #e0f2fe;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    text-align: left;
+}
+
+.nv-mv-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(14, 165, 233, 0.15);
+}
+
+.nv-mv-icono {
+    font-size: 1.8rem;
+    margin-bottom: 0.8rem;
+}
+
+.nv-mv-card h4 {
+    margin: 0 0 0.6rem 0;
+    font-size: 1.25rem;
+    color: #0c4a6e;
+    font-weight: 700;
+}
+
+.nv-mv-card p {
+    margin: 0;
+    font-size: 0.88rem;
+    color: #475569;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+/* ===================================================
+   UBICACIÓN / CONTACTO (FONDO CELESTE MINIMALISTA)
+====================================================== */
+.nv-contacto-grid {
+    background: #f0f9ff !important; /* Celeste suave */
+    border: 1px solid #bae6fd !important;
+    box-shadow: 0 8px 26px rgba(56, 189, 248, 0.1) !important;
+}
+
+.nv-info-icono {
+    background: #e0f2fe !important; /* Fondo icono celeste claro */
+    color: #0284c7;
+}
+
+@media (max-width: 800px) {
+    .nv-mv-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* RESETEO TOTAL: CERO VERDE, HOVER NARANJA */
+.nv-nodulo-doc, 
+.nv-tarjeta-doc {
+    background: #ffffff !important;
+    border-radius: 20px !important;
+    box-shadow: 0 8px 24px rgba(128, 161, 212, 0.15) !important;
+}
+
+/* Badge arriba */
+.nv-badge-modalidad,
+.nv-badge-pill {
+    background-color: #f0f7ff !important;
+    color: #80a1d4 !important;
+    border: 1px solid #80a1d4 !important;
+    font-size: 0.7rem !important;
+    font-weight: 700 !important;
+    padding: 3px 8px !important;
+    border-radius: 6px !important;
+}
+
+/* Botón Agendar Cita */
+.nv-nodulo-doc a,
+.nv-tarjeta-doc a,
+.nv-btn-agendar-card,
+.nv-btn-agendar-nodulo {
+    background-color: #ffffff !important;
+    border: 1.5px solid #80a1d4 !important;
+    color: #80a1d4 !important;
+    border-radius: 10px !important;
+    padding: 7px 16px !important;
+    font-weight: 700 !important;
+    font-size: 0.82rem !important;
+    text-decoration: none !important;
+    display: inline-block !important;
+    transition: all 0.2s ease !important;
+}
+
+/* Hover al tocar: Naranja puro */
+.nv-nodulo-doc a:hover,
+.nv-tarjeta-doc a:hover,
+.nv-btn-agendar-card:hover,
+.nv-btn-agendar-nodulo:hover {
+    background-color: #e76f51 !important;
+    border-color: #e76f51 !important;
+    color: #ffffff !important;
+    box-shadow: 0 4px 12px rgba(231, 111, 81, 0.3) !important;
+}
+
