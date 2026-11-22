@@ -1,8 +1,24 @@
 import { useState } from 'react';
 import './index.css';
+import './integracion.css';
+import { calcularIMC } from './utils/clinica.js';
+import { useAuth } from './auth/useAuth.js';
+import { VIEWS, resolveView, visibleViews, defaultView } from './auth/permissions.js';
+import LoginView from './views/LoginView.jsx';
+import ProfileView from './views/ProfileView.jsx';
+import ShopView from './views/ShopView.jsx';
+import CartView from './views/CartView.jsx';
+import OrdersView from './views/OrdersView.jsx';
+import ProductsView from './views/ProductsView.jsx';
+import UsersView from './views/UsersView.jsx';
+import { SalesView, AuditView } from './views/ReportViews.jsx';
 
 export default function App() {
-  const [currentTab, setCurrentTab] = useState('inicio');
+  const { user, logout } = useAuth();
+  // Al recargar con sesión guardada se aterriza en la vista de su rol (no en 'inicio').
+  const [requestedTab, setCurrentTab] = useState(() => defaultView(user));
+  // Restricción de acceso: si el rol no puede ver la pestaña pedida, se muestra la de su rol.
+  const currentTab = resolveView(requestedTab, user);
 
   // --- CARRUSEL REACTIVO ---
   const [slideActual, setSlideActual] = useState(0);
@@ -39,7 +55,7 @@ export default function App() {
 
   const p = parseFloat(peso);
   const t = parseFloat(talla);
-  const imcCalculado = (p > 0 && t > 0) ? (p / (t * t)).toFixed(1) : '';
+  const imcCalculado = calcularIMC(p, t);
 
   const handleAgregarMedicion = (e) => {
     e.preventDefault();
@@ -69,42 +85,9 @@ export default function App() {
     setCitaData({ nombre: '', email: '', nutricionista: '', servicio: '', fecha: '' });
   };
 
-  // --- ADMINISTRACIÓN ---
-  const [adminAuth, setAdminAuth] = useState(false);
-  const [credenciales, setCredenciales] = useState({ user: '', pass: '' });
-  const [errorLogin, setErrorLogin] = useState(false);
-  const [usuarios, setUsuarios] = useState([
-    { id: 1, nombre: 'Camila Morales', email: 'cmorales@nutrivida.cl', rol: 'Nutricionista', estado: 'Activo' },
-    { id: 2,  nombre: 'Javier Pérez', email: 'javier.perez@gmail.com', rol: 'Paciente', estado: 'Activo' }
-  ]);
-  const [nuevoUsuario, setNuevoUsuario] = useState({ nombre: '', email: '', rol: 'Nutricionista' });
-
-  const handleLogin = (e) => {
-    e.preventDefault();
-    if (credenciales.user === 'admin' && credenciales.pass === 'nutrivida2026') {
-      setAdminAuth(true);
-      setErrorLogin(false);
-    } else {
-      setErrorLogin(true);
-    }
-  };
-
-  const handleAgregarUsuario = (e) => {
-    e.preventDefault();
-    setUsuarios([...usuarios, { ...nuevoUsuario, id: Date.now(), estado: 'Activo' }]);
-    setNuevoUsuario({ nombre: '', email: '', rol: 'Nutricionista' });
-  };
-
-  const cambiarRolUsuario = (id) => {
-    const rolesDisponibles = ['Nutricionista', 'Administrador', 'Paciente'];
-    setUsuarios(usuarios.map(u => {
-      if (u.id === id) {
-        const index = rolesDisponibles.indexOf(u.rol);
-        const proxRol = rolesDisponibles[(index + 1) % rolesDisponibles.length];
-        return { ...u, rol: proxRol };
-      }
-      return u;
-    }));
+  const cerrarSesion = () => {
+    logout();
+    setCurrentTab('inicio');
   };
 
   return (
@@ -115,10 +98,19 @@ export default function App() {
           <h1 className="logo" onClick={() => setCurrentTab('inicio')}>Clínica NutriVida</h1>
           <nav className="header-nav">
             <div className="nav-links-desktop">
-              <button className={currentTab === 'inicio' ? 'active' : ''} onClick={() => setCurrentTab('inicio')}>Inicio</button>
-              <button className={currentTab === 'citas' ? 'active' : ''} onClick={() => setCurrentTab('citas')}>Agendar Cita</button>
-              <button className={currentTab === 'ficha' ? 'active' : ''} onClick={() => setCurrentTab('ficha')}>Mi Ficha</button>
-              <button className={currentTab === 'admin' ? 'active' : ''} onClick={() => setCurrentTab('admin')}>Administración</button>
+              {visibleViews(user).map((id) => (
+                <button key={id} className={currentTab === id ? 'active' : ''} onClick={() => setCurrentTab(id)}>
+                  {VIEWS[id].label}
+                </button>
+              ))}
+              {user ? (
+                <>
+                  <span className="nv-user-chip" title={user.email}>{user.name} · {[...user.roles].join(', ')}</span>
+                  <button onClick={cerrarSesion}>Cerrar sesión</button>
+                </>
+              ) : (
+                <button className={currentTab === 'login' ? 'active' : ''} onClick={() => setCurrentTab('login')}>Ingresar</button>
+              )}
             </div>
           </nav>
         </div>
@@ -551,121 +543,17 @@ export default function App() {
         </main>
       )}
 
-      {/* 4. VISTA ADMINISTRACIÓN */}
-      {currentTab === 'admin' && (
-        <main>
-          {!adminAuth ? (
-            <section className="card-box" style={{ maxWidth: '400px', margin: '40px auto', textAlign: 'center' }}>
-              <h2>Acceso Restringido</h2>
-              <p style={{ marginTop: '0.5rem', color: '#555' }}>Ingrese sus credenciales de Administrador para acceder al panel.</p>
-
-              <form onSubmit={handleLogin} style={{ display: 'flex', flexDirection: 'column', gap: '1rem', marginTop: '1.5rem' }}>
-                <input
-                  type="text"
-                  placeholder="Usuario (admin)"
-                  required
-                  value={credenciales.user}
-                  onChange={(e) => setCredenciales({ ...credenciales, user: e.target.value })}
-                />
-                <input
-                  type="password"
-                  placeholder="Contraseña (nutrivida2026)"
-                  required
-                  value={credenciales.pass}
-                  onChange={(e) => setCredenciales({ ...credenciales, pass: e.target.value })}
-                />
-                <button type="submit">Ingresar al Panel</button>
-              </form>
-
-              {errorLogin && (
-                <p style={{ color: '#d32f2f', marginTop: '1rem', fontWeight: 'bold' }}>
-                  Credenciales incorrectas. Pruebe admin / nutrivida2026
-                </p>
-              )}
-            </section>
-          ) : (
-            <div>
-              <section className="card-box" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                <div>
-                  <h2>Panel de Gestión de Usuarios y Roles</h2>
-                  <p style={{ marginTop: '0.5rem' }}>Administración de accesos y permisos del personal médico y pacientes.</p>
-                </div>
-                <button onClick={() => setAdminAuth(false)} style={{ background: '#d32f2f', padding: '0.5rem 1rem' }}>
-                  Cerrar Sesión
-                </button>
-              </section>
-
-              <section className="card-box" style={{ marginTop: '1.5rem' }}>
-                <h3>Registrar nuevo usuario</h3>
-                <form onSubmit={handleAgregarUsuario} style={{ marginTop: '1rem' }}>
-                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1rem' }}>
-                    <div className="form-group">
-                      <label>Nombre Completo:</label>
-                      <input
-                        type="text"
-                        placeholder="Ej: Roberto Gómez"
-                        required
-                        value={nuevoUsuario.nombre}
-                        onChange={(e) => setNuevoUsuario({ ...nuevoUsuario, nombre: e.target.value })}
-                      />
-                    </div>
-                    <div className="form-group">
-                      <label>Correo Electrónico:</label>
-                      <input
-                        type="email"
-                        placeholder="Ej: roberto.gomez@gmail.com"
-                        required
-                        value={nuevoUsuario.email}
-                        onChange={(e) => setNuevoUsuario({ ...nuevoUsuario, email: e.target.value })}
-                      />
-                    </div>
-                    <div className="form-group">
-                      <label>Rol asignado:</label>
-                      <select
-                        value={nuevoUsuario.rol}
-                        onChange={(e) => setNuevoUsuario({ ...nuevoUsuario, rol: e.target.value })}
-                      >
-                        <option value="Nutricionista">Nutricionista</option>
-                        <option value="Administrador">Administrador</option>
-                        <option value="Paciente">Paciente</option>
-                      </select>
-                    </div>
-                  </div>
-                  <button type="submit" style={{ marginTop: '1rem' }}>Agregar Usuario</button>
-                </form>
-              </section>
-
-              <section className="card-box" style={{ marginTop: '1.5rem' }}>
-                <h3>Usuarios Registrados</h3>
-                <table>
-                  <thead>
-                    <tr>
-                      <th>Usuario</th>
-                      <th>Correo</th>
-                      <th>Rol actual</th>
-                      <th>Estado</th>
-                      <th>Acción</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {usuarios.map((u) => (
-                      <tr key={u.id}>
-                        <td>{u.nombre}</td>
-                        <td>{u.email}</td>
-                        <td><span className="badge">{u.rol}</span></td>
-                        <td>{u.estado}</td>
-                        <td>
-                          <button className="btn-cambiar-rol" onClick={() => cambiarRolUsuario(u.id)}>Cambiar Rol</button>
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </section>
-            </div>
-          )}
-        </main>
-      )}
+      {/* 4. VISTAS CONECTADAS AL BACKEND (cada una solo se dibuja si el rol tiene permiso) */}
+      {currentTab === 'login' && <LoginView onSuccess={(u) => setCurrentTab(defaultView(u))} />}
+      {currentTab === 'tienda' && <ShopView onGoCart={() => setCurrentTab('carrito')} />}
+      {currentTab === 'carrito' && <CartView onGoOrders={() => setCurrentTab('misPedidos')} />}
+      {currentTab === 'misPedidos' && <OrdersView mode="cliente" />}
+      {currentTab === 'productos' && <ProductsView />}
+      {currentTab === 'pedidos' && <OrdersView mode="staff" />}
+      {currentTab === 'ventas' && <SalesView />}
+      {currentTab === 'usuarios' && <UsersView />}
+      {currentTab === 'auditoria' && <AuditView />}
+      {currentTab === 'perfil' && <ProfileView />}
 
       {/* FOOTER ORIGINAL */}
       <footer>
