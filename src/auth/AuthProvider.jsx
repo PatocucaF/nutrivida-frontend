@@ -34,6 +34,21 @@ export function AuthProvider({ children }) {
     return data.user;
   }, []);
 
+  // Renueva el token antes de que venza (cuando le queda el 20% de vida) para no cortar la sesión
+  // de quien sigue usando la app. Si la renovación falla, el timer de arriba cierra la sesión al vencer.
+  useEffect(() => {
+    if (!session) return undefined;
+    const espera = Math.min(Math.max(msUntilExpiry(session.token) * 0.8, 1000), MAX_TIMEOUT);
+    const id = setTimeout(async () => {
+      try {
+        startSession(await api('/api/v1/auth/refresh', { method: 'POST' }));
+      } catch {
+        /* sin red o token rechazado: se mantiene el flujo normal de expiración */
+      }
+    }, espera);
+    return () => clearTimeout(id);
+  }, [session, startSession]);
+
   const login = useCallback(
     async (email, password) =>
       startSession(await api('/api/v1/auth/login', { method: 'POST', body: { email, password }, auth: false })),

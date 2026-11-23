@@ -5,7 +5,7 @@ import { ErrorBox } from '../ui/Feedback.jsx';
 
 export default function LoginView({ onSuccess }) {
   const { login, register } = useAuth();
-  const [modo, setModo] = useState('login'); // 'login' | 'registro'
+  const [modo, setModo] = useState('registro'); // 'login' | 'registro'
   const [form, setForm] = useState({ name: '', email: '', password: '' });
   const [errores, setErrores] = useState({});
   const [error, setError] = useState(null);
